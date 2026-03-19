@@ -225,6 +225,12 @@ const recommendations = [
   },
 ];
 
+const lors = [
+  { name: "Dr. Deepti Reddy", role: "Associate Professor, Computer Engineering — NMIMS University", url: "/docs/lor-deepti-reddy.pdf" },
+  { name: "Prof. Sanjay Deshmukh", role: "Assistant Professor, Computer Engineering — NMIMS University", url: "/docs/lor-sanjay-deshmukh.pdf" },
+  { name: "Prof. Krishna Samdani", role: "Assistant Professor, Computer Engineering — NMIMS University", url: "/docs/lor-krishna-samdani.pdf" },
+];
+
 function Recommendations() {
   return (
     <div style={{ padding: "0 2rem 80px", maxWidth: 900, margin: "0 auto" }}>
@@ -248,6 +254,29 @@ function Recommendations() {
           <div style={{ color: "#cbd5e1", lineHeight: 1.7, fontStyle: "italic" }}>{r.text}</div>
         </div>
       ))}
+
+      <div style={{ marginTop: "3rem" }}>
+        <div style={{ fontWeight: 700, color: "#FF9933", marginBottom: "1.2rem", fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.5px" }}>Letters of Recommendation</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+          {lors.map((l, i) => (
+            <a key={i} href={l.url} target="_blank" rel="noreferrer" style={{
+              display: "flex", alignItems: "center", justifyContent: "space-between",
+              padding: "1rem 1.25rem", background: "rgba(255,255,255,0.03)",
+              border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8,
+              textDecoration: "none", transition: "all 0.2s"
+            }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.07)"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.15)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.03)"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.08)"; }}
+            >
+              <div>
+                <div style={{ color: "#e2e8f0", fontWeight: 600, fontSize: "0.95rem", marginBottom: "0.2rem" }}>{l.name}</div>
+                <div style={{ color: "#64748b", fontSize: "0.82rem" }}>{l.role}</div>
+              </div>
+              <span style={{ color: "#94a3b8", fontSize: "0.85rem", whiteSpace: "nowrap", marginLeft: "1rem" }}>View LOR ↗</span>
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -257,25 +286,29 @@ const jobs = [
     title: "Private Equity & Structured Credit Analyst",
     company: "UTI Alternatives", companyColor: "#0052CC", companyUrl: "https://www.utialternatives.com/home", location: "New Delhi",
     period: "Jul 2025 - Sep 2025",
-    desc: "Screened and evaluated 16+ private credit and equity deals (~$15M) with 40% conversion to term sheet. Executed transactions: $150K structured equity, $225K real estate financings, $127.5K education sector restructuring. Developed investor dashboards (IRR, MOIC, NAV, carried interest)."
+    desc: "Screened and evaluated 16+ private credit and equity deals (~$15M) with 40% conversion to term sheet. Executed transactions: $150K structured equity, $225K real estate financings, $127.5K education sector restructuring. Developed investor dashboards (IRR, MOIC, NAV, carried interest).",
+    certUrl: "/docs/cert-uti.pdf"
   },
   {
     title: "Quantitative Trading Analyst",
     company: "HDFC Securities", companyColor: "#003D7A", companyUrl: "https://www.hdfcsec.com/", location: "Mumbai",
     period: "May 2025 - Jul 2025",
-    desc: "Benchmarked collateral margin haircuts on 25 high-volume equities. Built robust backtests using technical analysis (RSI, MACD, Bollinger Bands) to refine signals for better risk-adjusted returns."
+    desc: "Benchmarked collateral margin haircuts on 25 high-volume equities. Built robust backtests using technical analysis (RSI, MACD, Bollinger Bands) to refine signals for better risk-adjusted returns.",
+    certUrl: "/docs/cert-hdfc.pdf"
   },
   {
     title: "Software Development & Data Mining Analyst",
     company: "Yes Bank", companyColor: "#1E40AF", companyUrl: "https://www.yes.bank.in/", location: "Mumbai",
     period: "May 2023 - Jul 2023",
-    desc: "Automated incentive calculation systems using Python and Hadoop. Enhanced sales team productivity by 16% by reducing reporting turnaround time to T+1 day."
+    desc: "Automated incentive calculation systems using Python and Hadoop. Enhanced sales team productivity by 16% by reducing reporting turnaround time to T+1 day.",
+    certUrl: "/docs/cert-yesbank.pdf"
   },
   {
     title: "Fundamental Research Analyst",
     company: "Aditya Birla Capital", companyColor: "#C8102E", companyUrl: "https://www.adityabirlacapital.com/abcd/share-market", location: "Mumbai",
     period: "Jun 2022 - Jul 2022",
-    desc: "Conducted fundamental valuations of 20 listed healthcare companies. Identified KIMS and Rainbow Hospitals which delivered 42% returns within 12 months."
+    desc: "Conducted fundamental valuations of 20 listed healthcare companies. Identified KIMS and Rainbow Hospitals which delivered 42% returns within 12 months.",
+    certUrl: "/docs/cert-abc.pdf"
   },
 ];
 
@@ -293,7 +326,18 @@ function Work() {
             >{job.company} ↗</a>, {job.location}
           </div>
           <div style={{ fontSize: "0.85rem", color: "#64748b", marginBottom: "0.8rem" }}>{job.period}</div>
-          <div style={{ color: "#cbd5e1", lineHeight: 1.7 }}>{job.desc}</div>
+          <div style={{ color: "#cbd5e1", lineHeight: 1.7, marginBottom: "0.8rem" }}>{job.desc}</div>
+          {job.certUrl && (
+            <a href={job.certUrl} target="_blank" rel="noreferrer" style={{
+              display: "inline-flex", alignItems: "center", gap: "0.4rem",
+              padding: "0.35rem 0.75rem", background: "rgba(255,255,255,0.05)",
+              borderRadius: 4, color: "#94a3b8", textDecoration: "none", fontSize: "0.82rem",
+              border: "1px solid rgba(255,255,255,0.08)", transition: "all 0.2s"
+            }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.1)"; (e.currentTarget as HTMLAnchorElement).style.color = "#e2e8f0"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.05)"; (e.currentTarget as HTMLAnchorElement).style.color = "#94a3b8"; }}
+            >↗ View Certificate</a>
+          )}
         </div>
       ))}
     </Section>
