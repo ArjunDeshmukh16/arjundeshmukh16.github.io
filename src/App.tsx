@@ -681,7 +681,11 @@ function Contact() {
   const sendEmail = () => {
     if (!name || !email || !message) { alert("Please fill in all fields"); return; }
     const mailto = `mailto:arjun.deshmukh1609@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`From: ${name}\nEmail: ${email}\n\n${message}`)}`;
-    window.location.href = mailto;
+    const link = document.createElement("a");
+    link.href = mailto;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const inputStyle: React.CSSProperties = {
