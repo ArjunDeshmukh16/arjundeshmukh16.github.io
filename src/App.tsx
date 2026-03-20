@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 function hexToRgb(hex: string): [number, number, number] {
   const h = hex.replace("#", "");
@@ -687,14 +686,24 @@ function Contact() {
     setSending(true);
     setError("");
     try {
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        { from_name: name, from_email: email, message },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-      setSent(true);
-      setName(""); setEmail(""); setMessage("");
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "91e801bc-d0e1-425d-8efd-9c05a432ddda",
+          subject: `Portfolio Contact from ${name}`,
+          from_name: name,
+          email,
+          message,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSent(true);
+        setName(""); setEmail(""); setMessage("");
+      } else {
+        setError("Something went wrong. Please email me directly at arjun.deshmukh1609@gmail.com");
+      }
     } catch {
       setError("Something went wrong. Please email me directly at arjun.deshmukh1609@gmail.com");
     } finally {
