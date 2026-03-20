@@ -680,12 +680,10 @@ function Contact() {
 
   const sendEmail = () => {
     if (!name || !email || !message) { alert("Please fill in all fields"); return; }
-    const mailto = `mailto:arjun.deshmukh1609@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`From: ${name}\nEmail: ${email}\n\n${message}`)}`;
-    const link = document.createElement("a");
-    link.href = mailto;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const subject = `Portfolio Contact from ${name}`;
+    const body = `From: ${name}\nEmail: ${email}\n\n${message}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=arjun.deshmukh1609@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(gmailUrl, "_blank");
   };
 
   const inputStyle: React.CSSProperties = {
@@ -757,13 +755,13 @@ function Contact() {
       <FadeIn delay={0.15}>
         <p style={{ marginTop: "3rem", color: "#64748b", fontSize: "0.95rem", display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
           {[
-            { label: "Gmail", href: "mailto:arjun.deshmukh1609@gmail.com" },
+            { label: "Gmail", href: "https://mail.google.com/mail/?view=cm&fs=1&to=arjun.deshmukh1609@gmail.com" },
             { label: "LinkedIn", href: "https://linkedin.com/in/arjun-deshmukh1609" },
             { label: "GitHub", href: "https://github.com/ArjunDeshmukh16" },
             { label: "Instagram", href: "https://instagram.com/160991_arjun" },
           ].map((l, i, arr) => (
             <span key={l.label} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <a href={l.href} target={l.href.startsWith("mailto") ? undefined : "_blank"} rel="noreferrer"
+              <a href={l.href} target="_blank" rel="noreferrer"
                 style={linkStyle}
                 onMouseEnter={e => (e.currentTarget.style.color = "#e2e8f0")}
                 onMouseLeave={e => (e.currentTarget.style.color = "#94a3b8")}
@@ -851,12 +849,12 @@ function Footer() {
       zIndex: 50, letterSpacing: "0.5px", flexWrap: "wrap"
     }}>
       {[
-        { label: "email", href: "mailto:arjun.deshmukh1609@gmail.com" },
+        { label: "email", href: "https://mail.google.com/mail/?view=cm&fs=1&to=arjun.deshmukh1609@gmail.com" },
         { label: "instagram", href: "https://instagram.com/160991_arjun" },
         { label: "github", href: "https://github.com/ArjunDeshmukh16" },
         { label: "linkedin", href: "https://linkedin.com/in/arjun-deshmukh1609" },
       ].map(link => (
-        <a key={link.label} href={link.href} target={link.href.startsWith("mailto") ? undefined : "_blank"} rel="noreferrer"
+        <a key={link.label} href={link.href} target="_blank" rel="noreferrer"
           style={{ color: "#64748b", textDecoration: "none", fontWeight: 500 }}
           onMouseEnter={e => (e.currentTarget.style.color = "#94a3b8")}
           onMouseLeave={e => (e.currentTarget.style.color = "#64748b")}
