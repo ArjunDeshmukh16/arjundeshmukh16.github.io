@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 function hexToRgb(hex: string): [number, number, number] {
   const h = hex.replace("#", "");
@@ -677,13 +678,28 @@ function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
 
-  const sendEmail = () => {
-    if (!name || !email || !message) { alert("Please fill in all fields"); return; }
-    const subject = `Portfolio Contact from ${name}`;
-    const body = `From: ${name}\nEmail: ${email}\n\n${message}`;
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=arjun.deshmukh1609@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.open(gmailUrl, "_blank");
+  const sendEmail = async () => {
+    if (!name || !email || !message) { setError("Please fill in all fields."); return; }
+    setSending(true);
+    setError("");
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        { from_name: name, from_email: email, message },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      setSent(true);
+      setName(""); setEmail(""); setMessage("");
+    } catch {
+      setError("Something went wrong. Please email me directly at arjun.deshmukh1609@gmail.com");
+    } finally {
+      setSending(false);
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -719,36 +735,60 @@ function Contact() {
 
       <FadeIn delay={0.1}>
         <div style={{ maxWidth: 560 }}>
-          <h3 style={{ fontSize: "1.4rem", fontWeight: 700, marginBottom: "0.4rem", color: "#e2e8f0" }}>Send me an email</h3>
-          {[
-            { label: "Name", value: name, setter: setName, type: "text", placeholder: "Shah Rukh Khan" },
-            { label: "Email", value: email, setter: setEmail, type: "email", placeholder: "iamsrk@globalstar.com" },
-          ].map(({ label, value, setter, type, placeholder }) => (
-            <div key={label} style={{ marginBottom: "1.2rem" }}>
-              <label style={{ display: "block", fontWeight: 600, color: "#64748b", marginBottom: "0.4rem", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.8px" }}>{label}</label>
-              <input type={type} value={value} onChange={e => setter(e.target.value)} placeholder={placeholder}
-                style={inputStyle}
-                onFocus={e => (e.currentTarget.style.borderColor = "#FF9933")}
-                onBlur={e => (e.currentTarget.style.borderColor = "#334155")}
-              />
+          <h3 style={{ fontSize: "1.4rem", fontWeight: 700, marginBottom: "1.2rem", color: "#e2e8f0" }}>Send me an email</h3>
+
+          {sent ? (
+            <div style={{
+              padding: "1.5rem", background: "rgba(16,185,129,0.08)",
+              border: "1px solid rgba(16,185,129,0.3)", borderRadius: 8, marginBottom: "1rem"
+            }}>
+              <div style={{ color: "#10B981", fontWeight: 700, fontSize: "1rem", marginBottom: "0.4rem" }}>Message sent!</div>
+              <div style={{ color: "#94a3b8", fontSize: "0.9rem", marginBottom: "1rem" }}>Thanks for reaching out — I'll get back to you soon.</div>
+              <button onClick={() => setSent(false)} style={{
+                background: "transparent", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 5,
+                color: "#94a3b8", padding: "0.4rem 0.9rem", cursor: "pointer", fontSize: "0.85rem", transition: "all 0.2s"
+              }}
+                onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = "#e2e8f0"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = "#94a3b8"; }}
+              >Send another message</button>
             </div>
-          ))}
-          <div style={{ marginBottom: "1.5rem" }}>
-            <label style={{ display: "block", fontWeight: 600, color: "#64748b", marginBottom: "0.4rem", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.8px" }}>Message</label>
-            <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="What's on your mind?"
-              style={{ ...inputStyle, resize: "vertical", minHeight: 130 }}
-              onFocus={e => (e.currentTarget.style.borderColor = "#FF9933")}
-              onBlur={e => (e.currentTarget.style.borderColor = "#334155")}
-            />
-          </div>
-          <button onClick={sendEmail} style={{
-            width: "100%", padding: "0.85rem", background: "#ffffff", color: "#000000",
-            border: "none", borderRadius: 6, fontWeight: 700, cursor: "pointer",
-            fontSize: "0.95rem", transition: "all 0.2s", letterSpacing: "0.3px"
-          }}
-            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = "#e2e8f0"; (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-2px)"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = "#ffffff"; (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)"; }}
-          >Send Message →</button>
+          ) : (
+            <>
+              {[
+                { label: "Name", value: name, setter: setName, type: "text", placeholder: "Shah Rukh Khan" },
+                { label: "Email", value: email, setter: setEmail, type: "email", placeholder: "iamsrk@globalstar.com" },
+              ].map(({ label, value, setter, type, placeholder }) => (
+                <div key={label} style={{ marginBottom: "1.2rem" }}>
+                  <label style={{ display: "block", fontWeight: 600, color: "#64748b", marginBottom: "0.4rem", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.8px" }}>{label}</label>
+                  <input type={type} value={value} onChange={e => setter(e.target.value)} placeholder={placeholder}
+                    style={inputStyle}
+                    onFocus={e => (e.currentTarget.style.borderColor = "#FF9933")}
+                    onBlur={e => (e.currentTarget.style.borderColor = "#334155")}
+                  />
+                </div>
+              ))}
+              <div style={{ marginBottom: "1.5rem" }}>
+                <label style={{ display: "block", fontWeight: 600, color: "#64748b", marginBottom: "0.4rem", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.8px" }}>Message</label>
+                <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="What's on your mind?"
+                  style={{ ...inputStyle, resize: "vertical", minHeight: 130 }}
+                  onFocus={e => (e.currentTarget.style.borderColor = "#FF9933")}
+                  onBlur={e => (e.currentTarget.style.borderColor = "#334155")}
+                />
+              </div>
+              {error && <p style={{ color: "#EF4444", fontSize: "0.85rem", marginBottom: "0.8rem" }}>{error}</p>}
+              <button onClick={sendEmail} disabled={sending} style={{
+                width: "100%", padding: "0.85rem",
+                background: sending ? "#e2e8f0" : "#ffffff", color: "#000000",
+                border: "none", borderRadius: 6, fontWeight: 700,
+                cursor: sending ? "not-allowed" : "pointer",
+                fontSize: "0.95rem", transition: "all 0.2s", letterSpacing: "0.3px",
+                opacity: sending ? 0.7 : 1
+              }}
+                onMouseEnter={e => { if (!sending) (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-2px)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)"; }}
+              >{sending ? "Sending..." : "Send Message →"}</button>
+            </>
+          )}
         </div>
       </FadeIn>
 
