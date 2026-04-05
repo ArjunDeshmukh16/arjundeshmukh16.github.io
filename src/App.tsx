@@ -141,7 +141,7 @@ function Hero({ onNav }: { onNav: (id: string) => void }) {
         >
           <h1 style={{
             fontSize: "5rem", fontWeight: 800, lineHeight: 1.1, marginBottom: "1.5rem", letterSpacing: "-2px",
-            background: "linear-gradient(90deg, #FF9933 0%, #FFFFFF 33%, #138808 100%)",
+            background: "linear-gradient(120deg, #60a5fa 0%, #a78bfa 55%, #f0abfc 100%)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text"
           }}>Arjun Deshmukh</h1>
         </motion.div>
