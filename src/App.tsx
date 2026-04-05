@@ -599,41 +599,102 @@ function Skills() {
 }
 
 const pinnedRepos = [
-  { name: "CVaR-Based Left-Tail Factor Strategy", url: "https://github.com/ArjunDeshmukh16/CVaR-Based-Left-Tail-Factor-Strategy" },
-  { name: "Buy/Sell Signal Generation Engine", url: "https://github.com/ArjunDeshmukh16/Generating-Buy-Sell-Trading-Signals-from-Structured-Market-Data" },
-  { name: "SARA: Autonomous AI Model", url: "https://github.com/ArjunDeshmukh16/Articles-Blogs-and-Research-Papers" },
-  { name: "Bézier Flow", url: "https://github.com/ArjunDeshmukh16/B-zier-flow" },
+  { idx: "01", name: "CVaR-Based Left-Tail Factor Strategy", tags: ["Quant Finance", "Python"], url: "https://github.com/ArjunDeshmukh16/CVaR-Based-Left-Tail-Factor-Strategy" },
+  { idx: "02", name: "Buy/Sell Signal Generation Engine",   tags: ["AI · NLP", "Python"],      url: "https://github.com/ArjunDeshmukh16/Generating-Buy-Sell-Trading-Signals-from-Structured-Market-Data" },
+  { idx: "03", name: "SARA: Autonomous AI Model",           tags: ["LLM · Agents", "Python"],  url: "https://github.com/ArjunDeshmukh16/Articles-Blogs-and-Research-Papers" },
+  { idx: "04", name: "Bézier Flow",                         tags: ["Algorithms", "TypeScript"], url: "https://github.com/ArjunDeshmukh16/B-zier-flow" },
 ];
 
 function GitHubStats() {
   return (
     <div id="github" style={{ padding: "0 2rem 80px", maxWidth: 900, margin: "0 auto" }}>
       <FadeIn>
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "3rem", marginBottom: "2rem" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
-            <span style={{ color: "#64748b", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "1px", fontWeight: 600 }}>GitHub</span>
+        {/* Terminal-style header bar */}
+        <div style={{
+          borderTop: "1px solid rgba(255,255,255,0.08)",
+          paddingTop: "3rem",
+          marginBottom: "0",
+        }}>
+          <div style={{
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            padding: "0.6rem 1rem",
+            background: "rgba(255,255,255,0.03)",
+            border: "1px solid rgba(255,255,255,0.07)",
+            borderBottom: "none",
+            borderRadius: "6px 6px 0 0",
+          }}>
+            <span style={{
+              fontFamily: "'Courier New', 'Menlo', monospace",
+              fontSize: "0.72rem", color: "#475569",
+              letterSpacing: "0.08em", textTransform: "uppercase"
+            }}>
+              github / ArjunDeshmukh16 &nbsp;·&nbsp; {pinnedRepos.length} repositories
+            </span>
             <a href="https://github.com/ArjunDeshmukh16" target="_blank" rel="noreferrer"
-              style={{ color: "#64748b", fontSize: "0.82rem", textDecoration: "none", transition: "color 0.2s" }}
+              style={{
+                fontFamily: "'Courier New', 'Menlo', monospace",
+                fontSize: "0.72rem", color: "#475569",
+                textDecoration: "none", letterSpacing: "0.04em", transition: "color 0.2s"
+              }}
               onMouseEnter={e => (e.currentTarget.style.color = "#94a3b8")}
-              onMouseLeave={e => (e.currentTarget.style.color = "#64748b")}
-            >github.com/ArjunDeshmukh16 ↗</a>
+              onMouseLeave={e => (e.currentTarget.style.color = "#475569")}
+            >view profile ↗</a>
           </div>
         </div>
       </FadeIn>
 
+      {/* Repo rows */}
       <FadeIn delay={0.05}>
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+        <div style={{
+          border: "1px solid rgba(255,255,255,0.07)",
+          borderRadius: "0 0 6px 6px",
+          overflow: "hidden",
+        }}>
           {pinnedRepos.map((repo, i) => (
-            <a key={i} href={repo.url} target="_blank" rel="noreferrer" style={{
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-              padding: "0.75rem 0", borderBottom: "1px solid rgba(255,255,255,0.05)",
-              textDecoration: "none", transition: "all 0.2s", gap: "1rem"
-            }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.paddingLeft = "0.5rem"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.paddingLeft = "0"; }}
+            <a key={i} href={repo.url} target="_blank" rel="noreferrer"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "2.5rem 1fr auto auto",
+                alignItems: "center",
+                gap: "1rem",
+                padding: "0.9rem 1rem",
+                borderBottom: i < pinnedRepos.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none",
+                textDecoration: "none",
+                background: "transparent",
+                transition: "background 0.15s",
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.03)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; }}
             >
-              <span style={{ color: "#cbd5e1", fontSize: "0.92rem" }}>{repo.name}</span>
-              <span style={{ color: "#334155", fontSize: "0.8rem", whiteSpace: "nowrap" }}>↗</span>
+              {/* index */}
+              <span style={{
+                fontFamily: "'Courier New', 'Menlo', monospace",
+                fontSize: "0.72rem", color: "#334155",
+              }}>{repo.idx}</span>
+
+              {/* repo name */}
+              <span style={{
+                fontFamily: "'Courier New', 'Menlo', monospace",
+                fontSize: "0.88rem", color: "#cbd5e1",
+                letterSpacing: "0.01em",
+              }}>{repo.name}</span>
+
+              {/* tags */}
+              <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", justifyContent: "flex-end" }}>
+                {repo.tags.map((tag, t) => (
+                  <span key={t} style={{
+                    fontFamily: "'Courier New', 'Menlo', monospace",
+                    fontSize: "0.68rem", color: "#475569",
+                    padding: "0.15rem 0.5rem",
+                    border: "1px solid rgba(255,255,255,0.07)",
+                    borderRadius: 3,
+                    whiteSpace: "nowrap",
+                  }}>{tag}</span>
+                ))}
+              </div>
+
+              {/* arrow */}
+              <span style={{ color: "#334155", fontSize: "0.8rem" }}>↗</span>
             </a>
           ))}
         </div>
@@ -773,7 +834,7 @@ function Contact() {
       <FadeIn delay={0.15}>
         <p style={{ marginTop: "3rem", color: "#64748b", fontSize: "0.95rem", display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
           {[
-            { label: "Gmail", href: "mailto:arjun.deshmukh1609@gmail.com" },
+            { label: "Gmail", href: "https://mail.google.com/mail/?view=cm&fs=1&to=arjun.deshmukh1609@gmail.com" },
             { label: "LinkedIn", href: "https://linkedin.com/in/arjun-deshmukh1609" },
             { label: "GitHub", href: "https://github.com/ArjunDeshmukh16" },
             { label: "Instagram", href: "https://instagram.com/160991_arjun" },
@@ -867,7 +928,7 @@ function Footer() {
       zIndex: 50, letterSpacing: "0.5px", flexWrap: "wrap"
     }}>
       {[
-        { label: "email", href: "mailto:arjun.deshmukh1609@gmail.com" },
+        { label: "email", href: "https://mail.google.com/mail/?view=cm&fs=1&to=arjun.deshmukh1609@gmail.com" },
         { label: "instagram", href: "https://instagram.com/160991_arjun" },
         { label: "github", href: "https://github.com/ArjunDeshmukh16" },
         { label: "linkedin", href: "https://linkedin.com/in/arjun-deshmukh1609" },
