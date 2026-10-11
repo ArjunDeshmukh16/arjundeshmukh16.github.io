@@ -40,13 +40,14 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
 }
 
 const roles = [
+  { text: "Investment Analyst at ", highlight: "Cogitative Investments", from: "#0F766E", to: "#5EEAD4" },
   { text: "Graduated from ", highlight: "USC", from: "#CC0000", to: "#FFCC00" },
-  { text: "Private Equity Analyst at ", highlight: "UTI Alternatives", from: "#1A56DB", to: "#D4AF37" },
+  { text: "Financial Analyst at ", highlight: "Easley-Dunn Productions", from: "#7C3AED", to: "#F0ABFC" },
+  { text: "Private Equity Intern at ", highlight: "UTI Alternatives", from: "#1A56DB", to: "#D4AF37" },
   { text: "Graduated from ", highlight: "NMIMS", from: "#8B1538", to: "#FF6B6B" },
-  { text: "Quantitative Analyst at ", highlight: "HDFC Securities", from: "#003D7A", to: "#E63946" },
-  { text: "Data Analyst at ", highlight: "YES BANK", from: "#1E3A8A", to: "#60A5FA" },
-  { text: "Investment Analyst at ", highlight: "Aditya Birla Capital", from: "#8B0000", to: "#FF6B6B" },
-  { text: "Structured Credit Analyst at ", highlight: "UTI Alternatives", from: "#1A56DB", to: "#D4AF37" },
+  { text: "Product Strategy Intern at ", highlight: "HDFC Securities", from: "#003D7A", to: "#E63946" },
+  { text: "Business Analyst Intern at ", highlight: "YES BANK", from: "#1E3A8A", to: "#60A5FA" },
+  { text: "Equity Research Intern at ", highlight: "Aditya Birla Capital", from: "#8B0000", to: "#FF6B6B" },
 ];
 
 const taglines = [
@@ -243,13 +244,13 @@ function About({ onNav }: { onNav: (id: string) => void }) {
         <p style={{ marginBottom: "1.5rem" }}>Growing up in a family of financial strategists, I developed an early obsession with capital markets. Conversations around credit cycles, equity valuations, capital allocation, and risk pricing shaped my approach to investing: rigorous, data-driven, and always questioning.</p>
       </FadeIn>
       <FadeIn delay={0.1}>
-        <p style={{ marginBottom: "1.5rem" }}>Financial Engineering Graduate from the University of Southern California. Previously completed Computer Science from NMIMS University. This combination gives me a unique edge: deep technical foundations paired with rigorous financial theory. I bridge the gap between algorithmic thinking and real-world market dynamics.</p>
+        <p style={{ marginBottom: "1.5rem" }}>I hold a Master's in Financial Engineering from the University of Southern California and a Bachelor's in Computer Science from NMIMS University. Finance is my focus; my technical background lets me build the models, automation and data tools behind the analysis.</p>
       </FadeIn>
       <FadeIn delay={0.15}>
-        <p style={{ marginBottom: "1.5rem" }}>Interned in India's most competitive investment firms: UTI Alternatives, HDFC Securities, Yes Bank, and Aditya Birla Capital. I've screened investment opportunities, built performance dashboards, constructed backtesting frameworks, executed transactions, and analyzed 50+ companies. Every internship taught me something different about how capital flows and value gets created.</p>
+        <p style={{ marginBottom: "1.5rem" }}>Today I am an Investment Analyst at Cogitative Investments in San Diego, where I run monthly reporting and a driver-based forecast for a real estate portfolio. Before that I priced a digital economy at Easley-Dunn Productions, screened private credit and equity deals at UTI Alternatives, benchmarked collateral haircuts at HDFC Securities, automated incentive reporting at Yes Bank and researched healthcare stocks at Aditya Birla Capital. Each role taught me something different about how capital is allocated and how value is created.</p>
       </FadeIn>
       <FadeIn delay={0.2}>
-        <p style={{ marginBottom: "1.5rem" }}>The intersection of strategy and execution excites me most. Identifying inefficiencies in markets, structuring solutions, and guiding capital toward lasting value creation. My recent research at USC — tail-risk factor models and real-time signal generation — combines statistical rigor with practical implementation. I don't just build models; I build systems that work in the real world.</p>
+        <p style={{ marginBottom: "1.5rem" }}>The intersection of strategy and execution excites me most. Identifying inefficiencies in markets, structuring solutions, and guiding capital toward lasting value creation. My research at USC, a tail-risk factor study and a buy/sell signal engine, combines statistical rigor with practical implementation. I don't just build models; I build systems that work in the real world.</p>
       </FadeIn>
 
       <FadeIn delay={0.25}>
@@ -269,7 +270,7 @@ function About({ onNav }: { onNav: (id: string) => void }) {
       </FadeIn>
 
       <FadeIn delay={0.3}>
-        <p style={{ marginBottom: "1.5rem" }}>Currently seeking full-time opportunities in investment analysis, quantitative research, portfolio management, and systematic trading. Authorized to work in the United States (OPT eligible, available May 2026). I'm looking for teams that value intellectual rigor, data-driven decision-making, and a relentless pursuit of alpha.</p>
+        <p style={{ marginBottom: "1.5rem" }}>Open to full-time roles in FP&A and strategic finance, investment analysis, private equity, credit and equity research, anywhere in the United States. Authorized to work in the US on F-1 OPT and available to start immediately. I'm looking for teams that value rigor, ownership and clear, data-driven decisions.</p>
       </FadeIn>
     </Section>
   );
@@ -287,9 +288,9 @@ const recommendations = [
 ];
 
 const lors = [
-  { name: "Dr. Deepti Reddy", role: "Associate Professor, Computer Engineering — NMIMS University", url: "/docs/lor-deepti-reddy.pdf" },
-  { name: "Prof. Sanjay Deshmukh", role: "Assistant Professor, Computer Engineering — NMIMS University", url: "/docs/lor-sanjay-deshmukh.pdf" },
-  { name: "Prof. Krishna Samdani", role: "Assistant Professor, Computer Engineering — NMIMS University", url: "/docs/lor-krishna-samdani.pdf" },
+  { name: "Dr. Deepti Reddy", role: "Associate Professor, Computer Engineering, NMIMS University", url: "/docs/lor-deepti-reddy.pdf" },
+  { name: "Prof. Sanjay Deshmukh", role: "Assistant Professor, Computer Engineering, NMIMS University", url: "/docs/lor-sanjay-deshmukh.pdf" },
+  { name: "Prof. Krishna Samdani", role: "Assistant Professor, Computer Engineering, NMIMS University", url: "/docs/lor-krishna-samdani.pdf" },
 ];
 
 function Recommendations() {
@@ -351,36 +352,50 @@ function Recommendations() {
 
 const jobs = [
   {
-    title: "Private Equity & Structured Credit Analyst",
+    title: "Investment Analyst",
+    company: "Cogitative Investments", companyColor: "#0F766E", companyUrl: "", location: "San Diego, CA",
+    period: "Jul 2026 - Present",
+    desc: "Corrected cash-on-cash returns from -0.42% to 6.25% and from 15.22% to 11.40% by standardizing post-debt cash flow and invested equity calculations. Established monthly reporting for 3 properties with $166K of invested equity, analyzing operating, financing and timing variances against forecast. Consolidated 4 spreadsheets into 1 driver-based quarterly forecast linking rental income, occupancy, expenses and debt.",
+    tags: ["Real Estate", "Variance Analysis", "Forecasting", "Cash-on-Cash Returns", "Capital Allocation"]
+  },
+  {
+    title: "Financial Analyst",
+    company: "Easley-Dunn Productions", companyColor: "#7C3AED", companyUrl: "", location: "Torrance, CA",
+    period: "Jun 2026 - Jul 2026",
+    desc: "Compared pricing across 3 markets using FX conversion and volatility-based regional price bands, balancing affordability and monetization. Evaluated inflation risk and proposed pricing changes in a dual-currency economy using Python, Monte Carlo simulation and regression. Built biweekly and monthly KPI dashboards for currency creation, consumption, monetization and retention.",
+    tags: ["Pricing", "Monte Carlo", "Python", "KPI Dashboards", "Media & Entertainment"]
+  },
+  {
+    title: "Private Equity and Structured Credit Intern",
     company: "UTI Alternatives", companyColor: "#0052CC", companyUrl: "https://www.utialternatives.com/home", location: "New Delhi",
     period: "Jul 2025 - Sep 2025",
-    desc: "Screened and evaluated 16+ private credit and equity deals (~$15M) with 40% conversion to term sheet. Executed transactions: $150K structured equity, $225K real estate financings, $127.5K education sector restructuring. Developed investor dashboards (IRR, MOIC, NAV, carried interest).",
+    desc: "Screened 4 private investment opportunities totaling $5M across financial services, real estate and education, with 1 advancing to term sheet. Assessed school expansion debt capacity across 3 scenarios, linking enrollment, tuition collections, staffing, DSCR and collateral coverage. Aligned milestone-based funding and repayments by stress-testing expansion plans against the fund's breakeven targets.",
     certUrl: "/docs/cert-uti.pdf",
-    tags: ["Private Credit", "Structured Equity", "Deal Screening", "IRR / MOIC", "Investor Dashboards"]
+    tags: ["Private Credit", "Deal Screening", "Debt Capacity", "DSCR", "Scenario Analysis"]
   },
   {
-    title: "Quantitative Trading Analyst",
+    title: "Trading and Product Strategy Intern",
     company: "HDFC Securities", companyColor: "#003D7A", companyUrl: "https://www.hdfcsec.com/", location: "Mumbai",
     period: "May 2025 - Jul 2025",
-    desc: "Benchmarked collateral margin haircuts on 25 high-volume equities. Built robust backtests using technical analysis (RSI, MACD, Bollinger Bands) to refine signals for better risk-adjusted returns.",
+    desc: "Identified product gaps across Zerodha, Kotak and Axis by comparing onboarding, research, trading and margin access. Benchmarked collateral haircuts across 25 common equities, separating haircut rates from pledge eligibility for like-for-like comparison. Proposed tiered haircuts and a separate MTF leverage increase from 2.5x toward 3x, balancing capital efficiency with collateral risk.",
     certUrl: "/docs/cert-hdfc.pdf",
-    tags: ["Backtesting", "RSI / MACD", "Bollinger Bands", "Risk-Adjusted Returns", "Python"]
+    tags: ["Collateral Haircuts", "Margin Trading", "Competitive Benchmarking", "Product Strategy"]
   },
   {
-    title: "Software Development & Data Mining Analyst",
+    title: "Business Analyst Intern",
     company: "Yes Bank", companyColor: "#1E40AF", companyUrl: "https://www.yes.bank.in/", location: "Mumbai",
     period: "May 2023 - Jul 2023",
-    desc: "Automated incentive calculation systems using Python and Hadoop. Enhanced sales team productivity by 16% by reducing reporting turnaround time to T+1 day.",
+    desc: "Automated 2 monthly incentive plans for 1,000+ employees and 25+ business rules using SQL and Python. Cut reporting turnaround to T+1 by consolidating sales performance, KPI attainment, payouts, variance analysis and what-if scenarios. Delivered automated plans and a roadmap supporting a 130-plan automation strategy.",
     certUrl: "/docs/cert-yesbank.pdf",
-    tags: ["Python", "Hadoop", "Data Automation", "Pipeline Engineering"]
+    tags: ["SQL", "Python", "Reporting Automation", "Incentive Plans"]
   },
   {
-    title: "Fundamental Research Analyst",
+    title: "Investments and Equity Research Intern",
     company: "Aditya Birla Capital", companyColor: "#C8102E", companyUrl: "https://www.adityabirlacapital.com/abcd/share-market", location: "Mumbai",
     period: "Jun 2022 - Jul 2022",
-    desc: "Conducted fundamental valuations of 20 listed healthcare companies. Identified KIMS and Rainbow Hospitals which delivered 42% returns within 12 months.",
+    desc: "Prioritized healthcare after comparing BFSI, Defence and Healthcare on revenue visibility, cyclicality and operating fundamentals. Shortlisted 2 of 20 healthcare companies through financial screening and hospital operating models across base, upside and downside cases. Recommended KIMS and Rainbow Children's Medicare, which then outperformed the Sensex by 26 and 58 percentage points over one year.",
     certUrl: "/docs/cert-abc.pdf",
-    tags: ["Fundamental Analysis", "DCF Valuation", "Healthcare Sector", "42% Return Pick"]
+    tags: ["Equity Research", "Healthcare", "Scenario Modeling", "Stock Selection"]
   },
 ];
 
@@ -402,11 +417,15 @@ function Work() {
           <div style={{ marginBottom: "2.5rem", paddingBottom: "2rem", borderBottom: i < jobs.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none" }}>
             <div style={{ fontWeight: 700, color: "#e2e8f0", marginBottom: "0.3rem", fontSize: "1.05rem" }}>{job.title}</div>
             <div style={{ color: "#94a3b8", fontSize: "0.95rem", marginBottom: "0.2rem" }}>
-              <a href={job.companyUrl} target="_blank" rel="noreferrer"
-                style={{ color: job.companyColor, fontWeight: 600, textDecoration: "none" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.8"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
-              >{job.company} ↗</a>, {job.location}
+              {job.companyUrl ? (
+                <a href={job.companyUrl} target="_blank" rel="noreferrer"
+                  style={{ color: job.companyColor, fontWeight: 600, textDecoration: "none" }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.8"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
+                >{job.company} ↗</a>
+              ) : (
+                <span style={{ color: job.companyColor, fontWeight: 600 }}>{job.company}</span>
+              )}, {job.location}
             </div>
             <div style={{ fontSize: "0.85rem", color: "#64748b", marginBottom: "0.8rem" }}>{job.period}</div>
             <div style={{ color: "#cbd5e1", lineHeight: 1.7, marginBottom: "0.8rem" }}>{job.desc}</div>
@@ -440,18 +459,18 @@ const projectGroups = [
         title: "Generating Buy/Sell Trading Signals from Structured Market Data",
         link: "https://github.com/ArjunDeshmukh16/Generating-Buy-Sell-Trading-Signals-from-Structured-Market-Data",
         meta: "Directed Research · USC · Aug 2025 – Jan 2026",
-        desc: "Designed end-to-end signal engine integrating live price/volume feeds, news headlines, social sentiment data, and SEC filings into real-time composite scoring framework. Python-based implementation with production-ready data pipeline.",
+        desc: "Built a Streamlit engine that scores 118 US equities across 11 sectors from 0 to 100 using trend (MA20 vs MA50), momentum (RSI 14), volume and time-decayed news sentiment, then maps each score to BUY, HOLD or SELL with adjustable weights and thresholds.",
         github: "https://github.com/ArjunDeshmukh16/Generating-Buy-Sell-Trading-Signals-from-Structured-Market-Data",
-        tags: ["Python", "NLP", "Sentiment Analysis", "SEC Filings", "Signal Generation", "Real-Time Pipeline"]
+        tags: ["Python", "NLP Sentiment", "Technical Indicators", "Streamlit", "Signal Generation"]
       },
       {
         title: "CVaR-Based Left-Tail Factor Strategy",
         link: "https://github.com/ArjunDeshmukh16/CVaR-Based-Left-Tail-Factor-Strategy",
         meta: "Quantitative Research · USC · Aug 2025 – Nov 2025",
-        desc: "Built long-short equity strategy using 252-day rolling CVaR(5%) with Fama-MacBeth regressions, beta neutralization, and regime analysis. Results: 2.3% annual alpha, 0.84 Sharpe ratio, -18.2% max drawdown over 15-year backtest.",
+        desc: "Tested whether a 252-day rolling CVaR (5%) tail-risk factor earns returns beyond low volatility on CRSP data, 2016 to 2024. The long-only CVaR portfolio returned 9.57% a year with a 0.70 Sharpe, but Fama-MacBeth tests showed tail risk is not separately priced: it overlaps with low volatility.",
         github: "https://github.com/ArjunDeshmukh16/CVaR-Based-Left-Tail-Factor-Strategy",
         tags: ["Python", "CVaR", "Fama-MacBeth", "Long-Short Equity", "Factor Strategy", "Backtesting"],
-        highlight: "2.3% α · 0.84 Sharpe · −18.2% MDD"
+        highlight: "Long-only: 9.57% ann. · 0.70 Sharpe · 2016-2024"
       },
     ]
   },
@@ -471,9 +490,9 @@ const projectGroups = [
         title: "Bézier Flow: Curve Visualization & Optimization",
         link: "https://github.com/ArjunDeshmukh16/B-zier-flow",
         meta: "Computer Graphics · Jun 2022 – Aug 2022",
-        desc: "Designed rapid visualization system for Quadratic and Cubic Bézier curves for vehicle and airplane trajectories. Optimal motion planning algorithm presented at AINA-2024, Kitakyushu, Japan.",
+        desc: "Designed rapid visualization system for Quadratic and Cubic Bézier curves for vehicle and airplane trajectories. Applied to smooth motion planning for vehicle and aircraft paths.",
         github: "https://github.com/ArjunDeshmukh16/B-zier-flow",
-        tags: ["Python", "Computer Graphics", "Optimization", "AINA-2024 Japan"]
+        tags: ["TypeScript", "Computer Graphics", "Optimization"]
       },
       {
         title: "MeaLit: Food Recommendation Engine",
@@ -782,7 +801,7 @@ function Contact() {
               border: "1px solid rgba(16,185,129,0.3)", borderRadius: 8, marginBottom: "1rem"
             }}>
               <div style={{ color: "#10B981", fontWeight: 700, fontSize: "1rem", marginBottom: "0.4rem" }}>Message sent!</div>
-              <div style={{ color: "#94a3b8", fontSize: "0.9rem", marginBottom: "1rem" }}>Thanks for reaching out — I'll get back to you soon.</div>
+              <div style={{ color: "#94a3b8", fontSize: "0.9rem", marginBottom: "1rem" }}>Thanks for reaching out. I'll get back to you soon.</div>
               <button onClick={() => setSent(false)} style={{
                 background: "transparent", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 5,
                 color: "#94a3b8", padding: "0.4rem 0.9rem", cursor: "pointer", fontSize: "0.85rem", transition: "all 0.2s"
