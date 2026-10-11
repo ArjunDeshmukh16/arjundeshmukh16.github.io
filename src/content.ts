@@ -6,6 +6,9 @@ export const links = {
   cvar: 'https://github.com/ArjunDeshmukh16/CVaR-Based-Left-Tail-Factor-Strategy',
 };
 
+export const learning = ['Bloomberg Concepts', 'JPMC Job Simulation', 'Anthropic AI Fluency Certifications', 'Financial Modeling & Python skills by CFA'];
+export const languages = ['English', 'Hindi', 'Marathi', 'Punjabi'];
+
 export const projects = [
   {
     id: 'signal-engine', number: '01', type: 'MARKET RESEARCH', title: 'A trading signal you can explain.',
