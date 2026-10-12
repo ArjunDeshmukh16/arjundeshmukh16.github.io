@@ -177,26 +177,6 @@ export const projectGroups = [
         "highlight": null
       }
     ]
-  },
-  {
-    "label": "Entrepreneurship & Leadership",
-    "labelColor": "#990000",
-    "projects": [
-      {
-        "title": "CampusX, Student Marketplace",
-        "link": null,
-        "meta": "Finance, Strategy · Aug 2024 – Nov 2025",
-        "desc": "Co-founded a student marketplace with 5,470 registrations. Built financial models to track burn rate, unit economics and capital allocation. Identified fee generation from 164 transactions and focused on paid conversion, take rate and repeat usage.",
-        "github": null,
-        "tags": [
-          "Unit Economics",
-          "Financial Modeling",
-          "Capital Allocation",
-          "Marketplace KPIs"
-        ],
-        "highlight": null
-      }
-    ]
   }
 ];
 
