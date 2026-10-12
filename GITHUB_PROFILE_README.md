@@ -1,165 +1,64 @@
-<div align="center">
+# Arjun Deshmukh
 
-<!-- Animated Typing Header -->
-<a href="https://arjundeshmukh16.github.io">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=28&duration=3500&pause=800&color=FF9933&center=true&vCenter=true&multiline=true&width=700&height=80&lines=Hi+%F0%9F%91%8B+I'm+Arjun+Deshmukh;Finance+%C3%97+AI+%C3%97+Data+%C3%97+Strategy" alt="Typing SVG" />
-</a>
+Investment Analyst at Cogitative Investments · Finance, Investments & Analytics
 
-<br/>
+[Portfolio](https://arjundeshmukh16.github.io) · [LinkedIn](https://linkedin.com/in/arjun-deshmukh1609) · [Email](mailto:arjundeshmukh52233@gmail.com) · [Current resume](https://arjundeshmukh16.github.io/docs/Arjun_Deshmukh_Resume.pdf)
 
-<!-- Tagline -->
-<p>
-  <strong>Financial Engineering @ USC</strong> &nbsp;·&nbsp;
-  <strong>CS @ NMIMS</strong> &nbsp;·&nbsp;
-  <strong>Building at the intersection of Capital Markets & AI</strong>
-</p>
+Conversations about technology, financial markets and investing were part of my life long before I graduated in 2024. They sparked a lasting interest in how businesses create value, how risk is priced, and how disciplined decisions shape long-term outcomes.
 
-<!-- Badges -->
-[![Portfolio](https://img.shields.io/badge/Portfolio-arjundeshmukh16.github.io-FF9933?style=for-the-badge&logo=googlechrome&logoColor=white)](https://arjundeshmukh16.github.io)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-arjun--deshmukh1609-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arjun-deshmukh1609)
-[![Email](https://img.shields.io/badge/Email-arjun.deshmukh1609%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:arjun.deshmukh1609@gmail.com)
+I hold a master’s in Financial Engineering from the University of Southern California and a bachelor’s in Computer Science and Business Systems from NMIMS. I’m learning to look at investment strategies through both a financial and a technological lens. I enjoy studying businesses and markets, turning data into clear insights, testing investment ideas, and using technology to make everyday processes more efficient.
 
-</div>
+I feel I’m in the right place at the right time to build a career at the intersection of finance and AI. I’m motivated to learn, take responsibility and contribute to a team where I can keep growing.
 
----
+At USC, I worked under my program director to build an AI-powered signal engine that analyzed equities across sectors using market data, technical indicators and news sentiment. It brought together the areas I want to pursue: finance, technology and AI. I’m looking for opportunities where I can apply this background, contribute useful work and learn from experienced people.
 
-## 🧭 About Me
+I’m currently authorized to work in the United States and available to start immediately.
 
-> *"Markets are a voting machine in the short run and a weighing machine in the long run — I build the weighing machines."*
+**Top skills:** Communication · Problem Solving · Investment Analysis · Valuation · Equity Research
 
-I'm a **Financial Engineering graduate from USC** with a **Computer Science foundation from NMIMS**, combining rigorous quantitative methods with real-world investment experience across India's top financial firms.
+## Education
 
-- 🏦 **4 internships** at UTI Alternatives, HDFC Securities, Yes Bank, Aditya Birla Capital
-- 📊 **Quant Research** — CVaR factor strategies, real-time signal generation (USC Directed Research)
-- 🤖 **AI Projects** — SARA (autonomous AI assistant, Springer LNNS recommended), GAN research
-- 🌏 **Global perspective** — Indian private markets + US quantitative research (rare combination)
-- ✈️ **Presented** at AINA-2024, Kitakyushu, Japan
-- 🃏 **Interests:** Competitive chess, poker, active investing, cricket
+- **University of Southern California:** MS Financial Engineering, May 2026 · GPA 3.41/4.0
+- **NMIMS University:** B.Tech. Computer Science and Business Systems, May 2024 · GPA 3.40/4.0
 
-**Currently:** Open to full-time roles in Investment Analysis, Quantitative Research, Portfolio Management, Systematic Trading · F1 OPT · Available May 2026
+## Experience
 
----
+| Role | Employer | Dates | Selected work |
+|---|---|---|---|
+| Investment Analyst | Cogitative Investments | Jul 2026 – Present | Corrected cash-on-cash returns from −0.42% to 6.25% and 15.22% to 11.40% by standardizing post-debt cash flow and invested equity calculations. Established monthly reporting for 3 properties with $166K invested equity. Consolidated 4 spreadsheets into a driver-based quarterly forecast linking rental income, occupancy, expenses and debt. |
+| Financial Analyst | Easley-Dunn Productions, Inc. | Jun 2026 – Jul 2026 | Compared pricing across 3 markets using FX conversion and volatility-based regional price bands. Evaluated inflation risk in a dual-currency economy using Python, Monte Carlo simulations and regression. Built biweekly and monthly KPI dashboards for currency creation, consumption, monetization and retention. |
+| Private Equity and Structured Credit Intern | UTI Alternatives | Jul 2025 – Sep 2025 | Screened 4 private investment opportunities totaling $5M across financial services, real estate and education, with 1 advancing to term sheet. Assessed school expansion debt capacity across 3 scenarios using enrollment, tuition collections, staffing, DSCR and collateral coverage. Stress-tested expansion plans to align milestone-based funding and repayments with breakeven targets. |
+| Trading and Product Strategy Intern | HDFC Securities | May 2025 – Jul 2025 | Compared onboarding, research, trading and margin access across Zerodha, Kotak and Axis to identify product gaps. Benchmarked collateral haircuts across 25 common equities, separating haircut rates from pledge eligibility. Proposed tiered haircuts and a separate MTF leverage increase from 2.5x toward 3x, balancing capital efficiency with collateral risk. |
+| Business Analyst Intern | Yes Bank Limited | May 2023 – Jul 2023 | Automated 2 monthly incentive plans for 1,000+ employees and 25+ business rules using SQL and Python, retaining Excel reporting. Cut reporting turnaround to T+1 by consolidating sales performance, KPI attainment, payouts, variance analysis and what-if scenarios. Delivered automated plans and roadmaps supporting a 130-plan automation strategy. |
+| Investments and Equity Research Intern | Aditya Birla Capital | Jun 2022 – Jul 2022 | Compared BFSI, Defence and Healthcare on revenue visibility, cyclicality and operating fundamentals. Shortlisted 2 of 20 healthcare companies through financial screening and hospital operating models across base, upside and downside cases. Recommended KIMS and Rainbow Children’s Medicare, which subsequently outperformed the Sensex by 26 and 58 percentage points, respectively, over one year. |
 
-## 💼 Experience Highlights
+## Projects & Leadership
 
-| Role | Firm | Impact |
-|------|------|--------|
-| Private Equity & Structured Credit Analyst | **UTI Alternatives** | Screened 16+ deals (~$15M), 40% conversion to term sheet |
-| Quantitative Trading Analyst | **HDFC Securities** | Benchmarked margin haircuts on 25 equities; built RSI/MACD/BB backtests |
-| Software Dev & Data Mining Analyst | **Yes Bank** | 16% productivity boost via Python/Hadoop automation |
-| Fundamental Research Analyst | **Aditya Birla Capital** | Identified KIMS & Rainbow — 42% returns in 12 months |
+### [Buy/Sell Trading Signal Engine](https://github.com/ArjunDeshmukh16/Generating-Buy-Sell-Trading-Signals-from-Structured-Market-Data)
 
----
+Artificial Intelligence, Finance · USC · Aug 2025 – Jan 2026
 
-## 🔬 Featured Research & Projects
+Built a signal engine scoring 118 equities across 11 sectors on a 0–100 scale using trend, momentum, volume and NLP-based news sentiment. The dashboard displays buy, hold and sell recommendations with underlying indicators. Historical signal charts use technical indicators with neutral sentiment; they do not establish out-of-sample strategy returns.
 
-### 📈 Quantitative Research
-| Project | Description | Tech |
-|---------|-------------|------|
-| [**Buy/Sell Signal Engine**](https://github.com/ArjunDeshmukh16/Generating-Buy-Sell-Trading-Signals-from-Structured-Market-Data) | Real-time composite scoring from price/volume, news, sentiment & SEC filings | Python, NLP, APIs |
-| [**CVaR Left-Tail Factor Strategy**](https://github.com/ArjunDeshmukh16/CVaR-Based-Left-Tail-Factor-Strategy) | Long-short equity: **2.3% α, 0.84 Sharpe, -18.2% MDD** over 15-year backtest | Python, Pandas, NumPy |
+### [CVaR-Based Left-Tail Factor Strategy](https://github.com/ArjunDeshmukh16/CVaR-Based-Left-Tail-Factor-Strategy)
 
-### 🤖 AI & Machine Learning
-| Project | Description | Tech |
-|---------|-------------|------|
-| [**SARA: Autonomous AI Model**](https://github.com/ArjunDeshmukh16/Articles-Blogs-and-Research-Papers) | LLM-powered personal assistant (MS Office & Email automation). Recommended for Springer LNNS publication | Python, LLMs |
-| [**Bézier Flow**](https://github.com/ArjunDeshmukh16/B-zier-flow) | Vehicle trajectory optimization via Quadratic/Cubic Bézier curves. Presented at **AINA-2024, Japan** | Python, Math |
-| [**MeaLit**](https://github.com/ArjunDeshmukh16/MeaLit) | Personalized food recommendation engine (collaborative + content-based filtering) | Python, ML |
+Quantitative Investing · USC · Aug 2025 – Nov 2025
 
-### 📄 Research Papers
-| Paper | Grade |
-|-------|-------|
-| [Generative Adversarial Networks: Theory & Applications](https://github.com/ArjunDeshmukh16/Articles-Blogs-and-Research-Papers) | **A** |
+Built a beta-neutral long-short equity strategy using rolling 252-day CVaR at the 5% tail threshold on CRSP data. Evaluated factor predictive power and risk-adjusted returns using Fama–MacBeth and Fama–French regressions. Tested robustness across lookback windows, tail thresholds, and bull and crisis market regimes.
 
----
+### CampusX, Student Marketplace
 
-## 🛠️ Tech Stack
+Finance, Strategy · Aug 2024 – Nov 2025
 
-<div align="center">
+Co-founded a student marketplace with 5,470 registrations. Built financial models to track burn rate, unit economics and capital allocation. Identified fee generation from 164 transactions and focused on paid conversion, take rate and repeat usage.
 
-**Languages**
+## Skills & Certifications
 
-[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
-[![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)](https://postgresql.org)
-[![MATLAB](https://img.shields.io/badge/MATLAB-0076A8?style=flat-square&logo=mathworks&logoColor=white)](https://mathworks.com)
-[![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)](https://r-project.org)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://javascript.com)
-[![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)](https://isocpp.org)
+- **Programming & Data:** Python, SQL
+- **Tools & Platforms:** Excel, Tableau, Power BI, Anaplan
+- **Finance & Analytics:** Financial Valuation and Modeling, FP&A, Forecasting, DCF, Variance Analysis
+- **Certifications:** Bloomberg Concepts; JPMC Job Simulation; Anthropic AI Fluency Certifications; Financial Modeling & Python skills by CFA
+- **Languages:** English, Hindi, Marathi, Punjabi
+- **Interests:** Active Investing, Market-Trend Analysis, Competitive Chess, Cricket, Poker, Films and TV (Thriller and Crime)
 
-**Finance & Quant**
-
-![Financial Modeling](https://img.shields.io/badge/Financial%20Modeling-138808?style=flat-square)
-![Backtesting](https://img.shields.io/badge/Backtesting-FF9933?style=flat-square)
-![Factor Strategies](https://img.shields.io/badge/Factor%20Strategies-DC143C?style=flat-square)
-![Options Analytics](https://img.shields.io/badge/Options%20Analytics-4B0082?style=flat-square)
-![Fixed Income](https://img.shields.io/badge/Fixed%20Income-008080?style=flat-square)
-![CVaR / Risk](https://img.shields.io/badge/CVaR%20%2F%20Risk-B8860B?style=flat-square)
-
-**Tools**
-
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ArjunDeshmukh16)
-[![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white)](https://tableau.com)
-[![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com)
-[![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoftexcel&logoColor=white)](https://microsoft.com/excel)
-
-</div>
-
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=ArjunDeshmukh16&show_icons=true&theme=github_dark&hide_border=true&bg_color=000000&title_color=FF9933&icon_color=138808&text_color=e2e8f0&rank_icon=github" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArjunDeshmukh16&layout=compact&theme=github_dark&hide_border=true&bg_color=000000&title_color=FF9933&text_color=e2e8f0&langs_count=8" />
-
-</div>
-
-<div align="center">
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=ArjunDeshmukh16&theme=github-dark-blue&hide_border=true&background=000000&ring=FF9933&fire=FF9933&currStreakLabel=FF9933)](https://github.com/ArjunDeshmukh16)
-
-</div>
-
----
-
-## 🏆 Achievements & Recognition
-
-- 🎓 **USC Financial Engineering** — Graduate (May 2026)
-- 🗾 **AINA-2024 Japan** — Conference presenter, Kitakyushu
-- 📘 **Springer LNNS** — Recommended for publication (ICICV-2024)
-- 📈 **42% portfolio return** — Identified KIMS & Rainbow Hospitals at Aditya Birla Capital
-- 💼 **$500K+ in transactions** — Executed private credit, real estate, and education sector deals at UTI Alternatives
-
----
-
-## 📬 Let's Connect
-
-<div align="center">
-
-**I'm actively looking for full-time roles in:**
-
-`Investment Analysis` · `Quantitative Research` · `Portfolio Management` · `Systematic Trading` · `AI + Finance`
-
-**Target firms:** Morgan Stanley · BlackRock · Anthropic · Netflix · Two Sigma · Citadel · D.E. Shaw
-
-<br/>
-
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Visit_Site-FF9933?style=for-the-badge)](https://arjundeshmukh16.github.io)
-[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-Connect-0A66C2?style=for-the-badge)](https://linkedin.com/in/arjun-deshmukh1609)
-[![Email](https://img.shields.io/badge/📧_Email-Reach_Out-EA4335?style=for-the-badge)](mailto:arjun.deshmukh1609@gmail.com)
-[![CV](https://img.shields.io/badge/📄_CV-Download-138808?style=for-the-badge)](https://docs.google.com/document/d/1T0BxkCFIXMT6j-x_vLjNW_4ADol_9hCf6WjeWpuij1s/export?format=pdf)
-
-<br/>
-
-*Authorized to work in the US · F1 OPT · Available May 2026*
-
-</div>
-
----
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=ArjunDeshmukh16&color=FF9933&style=flat-square&label=Profile+Views" />
-  <br/><br/>
-  <em>⚡ "Capital flows to where it is treated best — I help identify where that is."</em>
-</div>
+Authorized to work in the United States on F-1 OPT. Available to start immediately.

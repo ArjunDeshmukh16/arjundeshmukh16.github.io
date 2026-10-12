@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { contactEmail, resumeUrl, roles, aboutParagraphs, whyHireMe, seekingText, jobs, projectGroups, skillGroups, pinnedRepos } from "./content";
 
 function hexToRgb(hex: string): [number, number, number] {
   const h = hex.replace("#", "");
@@ -39,16 +40,6 @@ function FadeIn({ children, delay = 0, className }: { children: React.ReactNode;
   );
 }
 
-const roles = [
-  { text: "Graduated from ", highlight: "USC", from: "#CC0000", to: "#FFCC00" },
-  { text: "Private Equity Analyst at ", highlight: "UTI Alternatives", from: "#1A56DB", to: "#D4AF37" },
-  { text: "Graduated from ", highlight: "NMIMS", from: "#8B1538", to: "#FF6B6B" },
-  { text: "Quantitative Analyst at ", highlight: "HDFC Securities", from: "#003D7A", to: "#E63946" },
-  { text: "Data Analyst at ", highlight: "YES BANK", from: "#1E3A8A", to: "#60A5FA" },
-  { text: "Investment Analyst at ", highlight: "Aditya Birla Capital", from: "#8B0000", to: "#FF6B6B" },
-  { text: "Structured Credit Analyst at ", highlight: "UTI Alternatives", from: "#1A56DB", to: "#D4AF37" },
-];
-
 const taglines = [
   { word: "AI", color: "#3B82F6", glow: "rgba(59,130,246,0.4)" },
   { word: "Investments", color: "#F59E0B", glow: "rgba(245,158,11,0.4)" },
@@ -63,7 +54,7 @@ const commands = [
   { id: "work", label: "Work", category: "Navigate" },
   { id: "projects", label: "Projects", category: "Navigate" },
   { id: "skills", label: "Skills", category: "Navigate" },
-  { id: "github", label: "GitHub Stats", category: "Navigate" },
+  { id: "github", label: "Featured GitHub Projects", category: "Navigate" },
   { id: "contact", label: "Contact", category: "Navigate" },
   { id: "credits", label: "Credits", category: "Navigate" },
 ];
@@ -185,7 +176,7 @@ function Hero({ onNav }: { onNav: (id: string) => void }) {
             onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = "#e2e8f0"; (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-2px)"; }}
             onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = "#ffffff"; (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)"; }}
           >Let's Talk</button>
-          <a href="https://docs.google.com/viewer?url=https://arjundeshmukh16.github.io/docs/Arjun_Deshmukh_Resume.pdf"
+          <a href={resumeUrl}
             target="_blank" rel="noreferrer"
             style={{ ...btnBase, background: "transparent", color: "#94a3b8", border: "2px solid #334155" }}
             onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#94a3b8"; (e.currentTarget as HTMLAnchorElement).style.color = "#e2e8f0"; (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)"; }}
@@ -240,16 +231,16 @@ function About({ onNav }: { onNav: (id: string) => void }) {
   return (
     <Section id="about" title="About">
       <FadeIn delay={0.05}>
-        <p style={{ marginBottom: "1.5rem" }}>Growing up in a family of financial strategists, I developed an early obsession with capital markets. Conversations around credit cycles, equity valuations, capital allocation, and risk pricing shaped my approach to investing: rigorous, data-driven, and always questioning.</p>
+        <p style={{ marginBottom: "1.5rem" }}>{aboutParagraphs[0]}</p>
       </FadeIn>
       <FadeIn delay={0.1}>
-        <p style={{ marginBottom: "1.5rem" }}>Financial Engineering Graduate from the University of Southern California. Previously completed Computer Science from NMIMS University. This combination gives me a unique edge: deep technical foundations paired with rigorous financial theory. I bridge the gap between algorithmic thinking and real-world market dynamics.</p>
+        <p style={{ marginBottom: "1.5rem" }}>{aboutParagraphs[1]}</p>
       </FadeIn>
       <FadeIn delay={0.15}>
-        <p style={{ marginBottom: "1.5rem" }}>Interned in India's most competitive investment firms: UTI Alternatives, HDFC Securities, Yes Bank, and Aditya Birla Capital. I've screened investment opportunities, built performance dashboards, constructed backtesting frameworks, executed transactions, and analyzed 50+ companies. Every internship taught me something different about how capital flows and value gets created.</p>
+        <p style={{ marginBottom: "1.5rem" }}>{aboutParagraphs[2]}</p>
       </FadeIn>
       <FadeIn delay={0.2}>
-        <p style={{ marginBottom: "1.5rem" }}>The intersection of strategy and execution excites me most. Identifying inefficiencies in markets, structuring solutions, and guiding capital toward lasting value creation. My recent research at USC — tail-risk factor models and real-time signal generation — combines statistical rigor with practical implementation. I don't just build models; I build systems that work in the real world.</p>
+        <p style={{ marginBottom: "1.5rem" }}>{aboutParagraphs[3]}</p>
       </FadeIn>
 
       <FadeIn delay={0.25}>
@@ -258,18 +249,14 @@ function About({ onNav }: { onNav: (id: string) => void }) {
           padding: "1.5rem", margin: "2rem 0", borderRadius: 4
         }}>
           <p style={{ color: "#e2e8f0", marginBottom: 0 }}>
-            <strong style={{ color: "#FF9933" }}>Why Hire Me:</strong> I bring a{" "}
-            <strong style={{ color: "#e2e8f0" }}>global perspective rare among Finance Engineering graduates</strong>.
-            My dual exposure to Indian private markets (UTI, HDFC, ABC) and US quantitative research (USC) enables me to
-            identify inefficiencies and build strategies that bridge emerging and developed markets. I'm ambitious about
-            building investment teams in Asia that leverage both regions' strengths. I don't just analyze markets; I
-            identify where capital flows inefficiently and structure solutions.
+            <strong style={{ color: "#FF9933" }}>Why Hire Me:</strong>{" "}{whyHireMe}
           </p>
         </div>
       </FadeIn>
 
       <FadeIn delay={0.3}>
-        <p style={{ marginBottom: "1.5rem" }}>Currently seeking full-time opportunities in investment analysis, quantitative research, portfolio management, and systematic trading. Authorized to work in the United States (OPT eligible, available May 2026). I'm looking for teams that value intellectual rigor, data-driven decision-making, and a relentless pursuit of alpha.</p>
+        <p style={{ marginBottom: "1.5rem" }}>{seekingText}</p>
+        <p style={{ marginBottom: "1.5rem" }}><strong>Top skills:</strong> Communication · Problem Solving · Investment Analysis · Valuation · Equity Research</p>
       </FadeIn>
     </Section>
   );
@@ -349,41 +336,6 @@ function Recommendations() {
   );
 }
 
-const jobs = [
-  {
-    title: "Private Equity & Structured Credit Analyst",
-    company: "UTI Alternatives", companyColor: "#0052CC", companyUrl: "https://www.utialternatives.com/home", location: "New Delhi",
-    period: "Jul 2025 - Sep 2025",
-    desc: "Screened and evaluated 16+ private credit and equity deals (~$15M) with 40% conversion to term sheet. Executed transactions: $150K structured equity, $225K real estate financings, $127.5K education sector restructuring. Developed investor dashboards (IRR, MOIC, NAV, carried interest).",
-    certUrl: "/docs/cert-uti.pdf",
-    tags: ["Private Credit", "Structured Equity", "Deal Screening", "IRR / MOIC", "Investor Dashboards"]
-  },
-  {
-    title: "Quantitative Trading Analyst",
-    company: "HDFC Securities", companyColor: "#003D7A", companyUrl: "https://www.hdfcsec.com/", location: "Mumbai",
-    period: "May 2025 - Jul 2025",
-    desc: "Benchmarked collateral margin haircuts on 25 high-volume equities. Built robust backtests using technical analysis (RSI, MACD, Bollinger Bands) to refine signals for better risk-adjusted returns.",
-    certUrl: "/docs/cert-hdfc.pdf",
-    tags: ["Backtesting", "RSI / MACD", "Bollinger Bands", "Risk-Adjusted Returns", "Python"]
-  },
-  {
-    title: "Software Development & Data Mining Analyst",
-    company: "Yes Bank", companyColor: "#1E40AF", companyUrl: "https://www.yes.bank.in/", location: "Mumbai",
-    period: "May 2023 - Jul 2023",
-    desc: "Automated incentive calculation systems using Python and Hadoop. Enhanced sales team productivity by 16% by reducing reporting turnaround time to T+1 day.",
-    certUrl: "/docs/cert-yesbank.pdf",
-    tags: ["Python", "Hadoop", "Data Automation", "Pipeline Engineering"]
-  },
-  {
-    title: "Fundamental Research Analyst",
-    company: "Aditya Birla Capital", companyColor: "#C8102E", companyUrl: "https://www.adityabirlacapital.com/abcd/share-market", location: "Mumbai",
-    period: "Jun 2022 - Jul 2022",
-    desc: "Conducted fundamental valuations of 20 listed healthcare companies. Identified KIMS and Rainbow Hospitals which delivered 42% returns within 12 months.",
-    certUrl: "/docs/cert-abc.pdf",
-    tags: ["Fundamental Analysis", "DCF Valuation", "Healthcare Sector", "42% Return Pick"]
-  },
-];
-
 function Tag({ label }: { label: string }) {
   return (
     <span style={{
@@ -402,11 +354,11 @@ function Work() {
           <div style={{ marginBottom: "2.5rem", paddingBottom: "2rem", borderBottom: i < jobs.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none" }}>
             <div style={{ fontWeight: 700, color: "#e2e8f0", marginBottom: "0.3rem", fontSize: "1.05rem" }}>{job.title}</div>
             <div style={{ color: "#94a3b8", fontSize: "0.95rem", marginBottom: "0.2rem" }}>
-              <a href={job.companyUrl} target="_blank" rel="noreferrer"
+              {job.companyUrl ? (<a href={job.companyUrl} target="_blank" rel="noreferrer"
                 style={{ color: job.companyColor, fontWeight: 600, textDecoration: "none" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.8"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
-              >{job.company} ↗</a>, {job.location}
+              >{job.company} ↗</a>) : (<span style={{ color: job.companyColor, fontWeight: 600 }}>{job.company}</span>)}, {job.location}
             </div>
             <div style={{ fontSize: "0.85rem", color: "#64748b", marginBottom: "0.8rem" }}>{job.period}</div>
             <div style={{ color: "#cbd5e1", lineHeight: 1.7, marginBottom: "0.8rem" }}>{job.desc}</div>
@@ -430,76 +382,6 @@ function Work() {
     </Section>
   );
 }
-
-const projectGroups = [
-  {
-    label: "Quantitative Research",
-    labelColor: "#F59E0B",
-    projects: [
-      {
-        title: "Generating Buy/Sell Trading Signals from Structured Market Data",
-        link: "https://github.com/ArjunDeshmukh16/Generating-Buy-Sell-Trading-Signals-from-Structured-Market-Data",
-        meta: "Directed Research · USC · Aug 2025 – Jan 2026",
-        desc: "Designed end-to-end signal engine integrating live price/volume feeds, news headlines, social sentiment data, and SEC filings into real-time composite scoring framework. Python-based implementation with production-ready data pipeline.",
-        github: "https://github.com/ArjunDeshmukh16/Generating-Buy-Sell-Trading-Signals-from-Structured-Market-Data",
-        tags: ["Python", "NLP", "Sentiment Analysis", "SEC Filings", "Signal Generation", "Real-Time Pipeline"]
-      },
-      {
-        title: "CVaR-Based Left-Tail Factor Strategy",
-        link: "https://github.com/ArjunDeshmukh16/CVaR-Based-Left-Tail-Factor-Strategy",
-        meta: "Quantitative Research · USC · Aug 2025 – Nov 2025",
-        desc: "Built long-short equity strategy using 252-day rolling CVaR(5%) with Fama-MacBeth regressions, beta neutralization, and regime analysis. Results: 2.3% annual alpha, 0.84 Sharpe ratio, -18.2% max drawdown over 15-year backtest.",
-        github: "https://github.com/ArjunDeshmukh16/CVaR-Based-Left-Tail-Factor-Strategy",
-        tags: ["Python", "CVaR", "Fama-MacBeth", "Long-Short Equity", "Factor Strategy", "Backtesting"],
-        highlight: "2.3% α · 0.84 Sharpe · −18.2% MDD"
-      },
-    ]
-  },
-  {
-    label: "AI & Systems",
-    labelColor: "#3B82F6",
-    projects: [
-      {
-        title: "SARA: Autonomous General-Purpose Model",
-        link: "https://github.com/ArjunDeshmukh16/Articles-Blogs-and-Research-Papers/blob/main/SARA%20AI",
-        meta: "AI & Deep Learning · NMIMS · Jul 2023 – May 2024",
-        desc: "LLM-powered autonomous system executing MS Office and Email functions as personal AI assistant. Recommended by mentor for publication at ICICV-2024 (Springer LNNS).",
-        github: "https://github.com/ArjunDeshmukh16/Articles-Blogs-and-Research-Papers/blob/main/SARA%20AI",
-        tags: ["Python", "LLMs", "Automation", "NLP", "Springer LNNS"]
-      },
-      {
-        title: "Bézier Flow: Curve Visualization & Optimization",
-        link: "https://github.com/ArjunDeshmukh16/B-zier-flow",
-        meta: "Computer Graphics · Jun 2022 – Aug 2022",
-        desc: "Designed rapid visualization system for Quadratic and Cubic Bézier curves for vehicle and airplane trajectories. Optimal motion planning algorithm presented at AINA-2024, Kitakyushu, Japan.",
-        github: "https://github.com/ArjunDeshmukh16/B-zier-flow",
-        tags: ["Python", "Computer Graphics", "Optimization", "AINA-2024 Japan"]
-      },
-      {
-        title: "MeaLit: Food Recommendation Engine",
-        link: "https://github.com/ArjunDeshmukh16/MeaLit",
-        meta: "Machine Learning · Data Science",
-        desc: "Personalised food recommendation system using collaborative filtering and content-based techniques to match user preferences with curated meal suggestions.",
-        github: "https://github.com/ArjunDeshmukh16/MeaLit",
-        tags: ["Python", "Collaborative Filtering", "Content-Based ML", "Recommendation Systems"]
-      },
-    ]
-  },
-  {
-    label: "Research Papers",
-    labelColor: "#10B981",
-    projects: [
-      {
-        title: "Generative Adversarial Networks: Theory & Applications",
-        link: "https://github.com/ArjunDeshmukh16/Articles-Blogs-and-Research-Papers/blob/main/Generative%20Adversarial%20Networks",
-        meta: "Research Paper · AI · Jan 2023 – Mar 2023",
-        desc: "Research on GANs investigating generator/discriminator architecture and parallel intelligence. Grade: A",
-        github: "https://github.com/ArjunDeshmukh16/Articles-Blogs-and-Research-Papers/blob/main/Generative%20Adversarial%20Networks",
-        tags: ["GANs", "Deep Learning", "Neural Networks", "Research"]
-      },
-    ]
-  },
-];
 
 function Projects() {
   return (
@@ -574,15 +456,6 @@ function Projects() {
   );
 }
 
-const skillGroups = [
-  { label: "Programming Languages", text: "Python, SQL, MATLAB, R Programming, JavaScript, C, C++, HTML, CSS, UML" },
-  { label: "Tools & Platforms", text: "GitHub, Tableau, Power BI, MS Office Suite (Word, Excel, PowerPoint)" },
-  { label: "Finance & Analytics", text: "Financial Analysis & Modeling, Security Valuation, Capital Budgeting, Fixed-Income Modeling, Options Analytics, Back-Testing" },
-  { label: "Soft Skills", text: "Communication, Problem Solving, Critical Thinking, Attention to Detail, Team Collaboration, Relationship Building" },
-  { label: "Languages", text: "English, Hindi, Marathi (Writing, Reading & Speaking)" },
-  { label: "Interests", text: "Sports (Cricket, Soccer, Table Tennis), Competitive Chess, Poker, Active Investing, Market-Trend Analysis, Reading" },
-];
-
 function Skills() {
   return (
     <Section id="skills" title="Skills & Certifications">
@@ -597,13 +470,6 @@ function Skills() {
     </Section>
   );
 }
-
-const pinnedRepos = [
-  { idx: "01", name: "CVaR-Based Left-Tail Factor Strategy", tags: ["Quant Finance", "Python"], url: "https://github.com/ArjunDeshmukh16/CVaR-Based-Left-Tail-Factor-Strategy" },
-  { idx: "02", name: "Buy/Sell Signal Generation Engine",   tags: ["AI · NLP", "Python"],      url: "https://github.com/ArjunDeshmukh16/Generating-Buy-Sell-Trading-Signals-from-Structured-Market-Data" },
-  { idx: "03", name: "SARA: Autonomous AI Model",           tags: ["LLM · Agents", "Python"],  url: "https://github.com/ArjunDeshmukh16/Articles-Blogs-and-Research-Papers" },
-  { idx: "04", name: "Bézier Flow",                         tags: ["Algorithms", "TypeScript"], url: "https://github.com/ArjunDeshmukh16/B-zier-flow" },
-];
 
 function GitHubStats() {
   return (
@@ -628,7 +494,7 @@ function GitHubStats() {
               fontSize: "0.72rem", color: "#475569",
               letterSpacing: "0.08em", textTransform: "uppercase"
             }}>
-              github / ArjunDeshmukh16 &nbsp;·&nbsp; {pinnedRepos.length} repositories
+              github / ArjunDeshmukh16 &nbsp;·&nbsp; {pinnedRepos.length} featured repositories
             </span>
             <a href="https://github.com/ArjunDeshmukh16" target="_blank" rel="noreferrer"
               style={{
@@ -707,38 +573,15 @@ function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
 
-  const sendEmail = async () => {
-    if (!name || !email || !message) { setError("Please fill in all fields."); return; }
-    setSending(true);
+  const sendEmail = () => {
+    if (!name.trim() || !email.trim() || !message.trim()) { setError("Please fill in all fields."); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) { setError("Please enter a valid email address."); return; }
     setError("");
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: "91e801bc-d0e1-425d-8efd-9c05a432ddda",
-          subject: `Portfolio Contact from ${name}`,
-          from_name: name,
-          email,
-          message,
-        }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setSent(true);
-        setName(""); setEmail(""); setMessage("");
-      } else {
-        setError("Something went wrong. Please email me directly at arjun.deshmukh1609@gmail.com");
-      }
-    } catch {
-      setError("Something went wrong. Please email me directly at arjun.deshmukh1609@gmail.com");
-    } finally {
-      setSending(false);
-    }
+    const subject = encodeURIComponent(`Portfolio Contact from ${name.trim()}`);
+    const body = encodeURIComponent(`Name: ${name.trim()}\nReply email: ${email.trim()}\n\n${message.trim()}`);
+    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
   };
 
   const inputStyle: React.CSSProperties = {
@@ -758,7 +601,7 @@ function Contact() {
     <Section id="contact" title="Let's Connect">
       <FadeIn delay={0.05}>
         <div style={{ display: "flex", gap: "1rem", marginBottom: "3rem", flexWrap: "wrap" }}>
-          <a href="https://docs.google.com/viewer?url=https://arjundeshmukh16.github.io/docs/Arjun_Deshmukh_Resume.pdf"
+          <a href={resumeUrl}
             target="_blank" rel="noreferrer"
             style={{ ...btnBase, background: "#ffffff", color: "#000000" }}
             onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#e2e8f0"; (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)"; }}
@@ -775,24 +618,8 @@ function Contact() {
       <FadeIn delay={0.1}>
         <div style={{ maxWidth: 560 }}>
           <h3 style={{ fontSize: "1.4rem", fontWeight: 700, marginBottom: "1.2rem", color: "#e2e8f0" }}>Send me an email</h3>
+          <p style={{ color: "#94a3b8", marginBottom: "1.2rem", fontSize: "0.9rem" }}>Opens your email app with a draft to <a href={`mailto:${contactEmail}`} style={{ color: "#cbd5e1" }}>{contactEmail}</a>.</p>
 
-          {sent ? (
-            <div style={{
-              padding: "1.5rem", background: "rgba(16,185,129,0.08)",
-              border: "1px solid rgba(16,185,129,0.3)", borderRadius: 8, marginBottom: "1rem"
-            }}>
-              <div style={{ color: "#10B981", fontWeight: 700, fontSize: "1rem", marginBottom: "0.4rem" }}>Message sent!</div>
-              <div style={{ color: "#94a3b8", fontSize: "0.9rem", marginBottom: "1rem" }}>Thanks for reaching out — I'll get back to you soon.</div>
-              <button onClick={() => setSent(false)} style={{
-                background: "transparent", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 5,
-                color: "#94a3b8", padding: "0.4rem 0.9rem", cursor: "pointer", fontSize: "0.85rem", transition: "all 0.2s"
-              }}
-                onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = "#e2e8f0"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = "#94a3b8"; }}
-              >Send another message</button>
-            </div>
-          ) : (
-            <>
               {[
                 { label: "Name", value: name, setter: setName, type: "text", placeholder: "Jane Smith" },
                 { label: "Email", value: email, setter: setEmail, type: "email", placeholder: "jane.smith@gmail.com" },
@@ -815,26 +642,24 @@ function Contact() {
                 />
               </div>
               {error && <p style={{ color: "#EF4444", fontSize: "0.85rem", marginBottom: "0.8rem" }}>{error}</p>}
-              <button onClick={sendEmail} disabled={sending} style={{
+              <button onClick={sendEmail} style={{
                 width: "100%", padding: "0.85rem",
-                background: sending ? "#e2e8f0" : "#ffffff", color: "#000000",
+                background: "#ffffff", color: "#000000",
                 border: "none", borderRadius: 6, fontWeight: 700,
-                cursor: sending ? "not-allowed" : "pointer",
+                cursor: "pointer",
                 fontSize: "0.95rem", transition: "all 0.2s", letterSpacing: "0.3px",
-                opacity: sending ? 0.7 : 1
+                opacity: 1
               }}
-                onMouseEnter={e => { if (!sending) (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-2px)"; }}
+                onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-2px)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)"; }}
-              >{sending ? "Sending..." : "Send Message →"}</button>
-            </>
-          )}
+              >Open email draft →</button>
         </div>
       </FadeIn>
 
       <FadeIn delay={0.15}>
         <p style={{ marginTop: "3rem", color: "#64748b", fontSize: "0.95rem", display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
           {[
-            { label: "Gmail", href: "https://mail.google.com/mail/?view=cm&fs=1&to=arjun.deshmukh1609@gmail.com" },
+            { label: "Gmail", href: `https://mail.google.com/mail/?view=cm&fs=1&to=${contactEmail}` },
             { label: "LinkedIn", href: "https://linkedin.com/in/arjun-deshmukh1609" },
             { label: "GitHub", href: "https://github.com/ArjunDeshmukh16" },
             { label: "Instagram", href: "https://instagram.com/160991_arjun" },
@@ -928,7 +753,7 @@ function Footer() {
       zIndex: 50, letterSpacing: "0.5px", flexWrap: "wrap"
     }}>
       {[
-        { label: "email", href: "https://mail.google.com/mail/?view=cm&fs=1&to=arjun.deshmukh1609@gmail.com" },
+        { label: "email", href: `https://mail.google.com/mail/?view=cm&fs=1&to=${contactEmail}` },
         { label: "instagram", href: "https://instagram.com/160991_arjun" },
         { label: "github", href: "https://github.com/ArjunDeshmukh16" },
         { label: "linkedin", href: "https://linkedin.com/in/arjun-deshmukh1609" },
