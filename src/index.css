@@ -71,8 +71,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .company-mark { background: #fff; border: 1px solid #e7dfd5; border-radius: 12px; width: 125px; height: 85px; display: flex; align-items: center; justify-content: center; padding: 12px; }
 .company-mark img { width: 100%; max-height: 60px; object-fit: contain; }
 .company-mark span { font-size: 27px; font-weight: 750; color: var(--cardinal); letter-spacing: -1px; }
-.company-mark-dark { background: #000; padding: 0; }
-.company-mark-dark img { width: 125px; height: auto; }
+.company-mark-dark { background: #000; padding: 0; overflow: hidden; }
+.company-mark-dark img { width: 190%; max-width: none; flex-shrink: 0; height: auto; }
 .project-card { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 28px; align-items: start; background: #fff !important; }
 .project-visual { padding: 22px 15px; border-radius: 10px; background: #faf7f0; border: 1px solid #ece3d5; }
 .project-school { width: 165px; height: 45px; object-fit: contain; object-position: left; display: block; margin-bottom: 24px; }
