@@ -96,20 +96,6 @@ function Nav({ onNav, onCmd }: { onNav: (id: string) => void; onCmd: () => void 
 }
 
 
-function UniversityShowcase() {
-  return <aside className="university-showcase" aria-label="USC academic background and campus">
-    <div className="school-marks">
-      <a href="https://viterbischool.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-viterbi.png" alt="USC Viterbi School of Engineering" width="578" height="157" /><span>MS Financial Engineering · 2026</span></a>
-      <a href="https://www.marshall.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-marshall.png" alt="USC Marshall School of Business" width="624" height="154" /><span>Investment & capital markets coursework</span></a>
-    </div>
-    <div className="campus-gallery">
-      <figure><img src="/campus/tommy-trojan.jpg" alt="Tommy Trojan statue at sunset on USC campus" width="768" height="432" /><figcaption>Tommy Trojan <span>University Park</span></figcaption></figure>
-      <figure><img src="/campus/hecuba.jpg" alt="Hecuba statue at dusk in USC Village" width="768" height="432" /><figcaption>Hecuba <span>USC Village</span></figcaption></figure>
-    </div>
-    <p className="campus-credit">Campus photography: <a href="https://www.usc.edu/happy-birthday-tommy-trojan-shrine-was-unveiled-96-years-ago-june-6/" target="_blank" rel="noreferrer">USC / Gus Ruelas</a> · <a href="https://www.usc.edu/hecuba-cam/" target="_blank" rel="noreferrer">USC</a></p>
-  </aside>;
-}
-
 const companyMarks: Record<string, {src?: string; initials?: string; dark?: boolean}> = {
   "Cogitative Investments": {initials: "CI"},
   "Easley-Dunn Productions, Inc.": {src: "/brand/easley-dunn.png", dark: true},
@@ -269,7 +255,6 @@ function Hero({ onNav }: { onNav: (id: string) => void }) {
           to navigate →
         </motion.p>
       </div>
-      <UniversityShowcase />
     </main>
   );
 }
@@ -292,9 +277,9 @@ function Section({ id, title, children }: { id: string; title: string; children:
 
 function AcademicLogoStrip() {
   return <div className="academic-logo-strip" aria-label="USC university and academic schools">
-    <a href="https://www.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-university-upload.png" alt="University of Southern California" loading="lazy" /><span>University of Southern California</span></a>
-    <a href="https://viterbischool.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-viterbi-upload.png" alt="USC Viterbi School of Engineering" loading="lazy" /><span>MS Financial Engineering</span></a>
-    <a href="https://www.marshall.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-marshall-upload.png" alt="USC Marshall School of Business" loading="lazy" /><span>Finance & investment coursework</span></a>
+    <a href="https://www.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-university-upload.png" alt="University of Southern California" loading="lazy" /></a>
+    <a href="https://viterbischool.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-viterbi-upload.png" alt="USC Viterbi School of Engineering" loading="lazy" /></a>
+    <a href="https://www.marshall.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-marshall-upload.png" alt="USC Marshall School of Business" loading="lazy" /></a>
   </div>;
 }
 
