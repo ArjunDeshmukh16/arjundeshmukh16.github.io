@@ -112,7 +112,6 @@ function CompanyMark({company}: {company:string}) {
 }
 function ProjectVisual({signal}: {signal:boolean}) {
   return <aside className="project-visual" aria-label={signal ? "Illustration of signal scoring inputs" : "Illustration of downside tail risk"}>
-    <img className="project-school" src={signal ? "/brand/usc-viterbi.png" : "/brand/usc-marshall.png"} alt={signal ? "USC Viterbi" : "USC Marshall"} loading="lazy" />
     {signal ? <>
       <div className="visual-eyebrow">MARKET DATA × NEWS</div>
       <svg viewBox="0 0 320 235" role="img" aria-label="Trend, momentum, volume and news sentiment feed a weighted scoring engine producing buy, hold or sell signals">
@@ -261,7 +260,7 @@ function Hero({ onNav }: { onNav: (id: string) => void }) {
 
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
-    <div id={id} style={{ padding: "100px 2rem 80px", maxWidth: 900, margin: "0 auto" }}>
+    <div id={id} className="content-section" style={{ padding: "100px 2rem 80px", maxWidth: 900, margin: "0 auto" }}>
       <FadeIn>
         <h2 style={{
           fontSize: "3rem", fontWeight: 800, marginBottom: "0.5rem", letterSpacing: "-1px",
@@ -273,14 +272,6 @@ function Section({ id, title, children }: { id: string; title: string; children:
       <div style={{ fontSize: "1rem", lineHeight: 1.85, color: "var(--body)" }}>{children}</div>
     </div>
   );
-}
-
-function AcademicLogoStrip() {
-  return <div className="academic-logo-strip" aria-label="USC university and academic schools">
-    <a href="https://www.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-university-upload.png" alt="University of Southern California" loading="lazy" /></a>
-    <a href="https://viterbischool.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-viterbi-upload.png" alt="USC Viterbi School of Engineering" loading="lazy" /></a>
-    <a href="https://www.marshall.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-marshall-upload.png" alt="USC Marshall School of Business" loading="lazy" /></a>
-  </div>;
 }
 
 function About({ onNav }: { onNav: (id: string) => void }) {
@@ -338,7 +329,7 @@ const lors = [
 
 function Recommendations() {
   return (
-    <div style={{ padding: "0 2rem 80px", maxWidth: 900, margin: "0 auto" }}>
+    <div className="content-section" style={{ padding: "0 2rem 80px", maxWidth: 900, margin: "0 auto" }}>
       <FadeIn>
         <h2 style={{
           fontSize: "3rem", fontWeight: 800, marginBottom: "0.5rem", letterSpacing: "-1px",
@@ -536,7 +527,7 @@ function Skills() {
 
 function GitHubStats() {
   return (
-    <div id="github" style={{ padding: "0 2rem 80px", maxWidth: 900, margin: "0 auto" }}>
+    <div id="github" className="content-section" style={{ padding: "0 2rem 80px", maxWidth: 900, margin: "0 auto" }}>
       <FadeIn>
         {/* Terminal-style header bar */}
         <div style={{
@@ -853,7 +844,6 @@ export default function App() {
     <div style={{ background: "var(--page)", color: "var(--ink)", fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", letterSpacing: "-0.3px" }}>
       <Nav onNav={navigate} onCmd={() => setCmdOpen(v => !v)} />
       <Hero onNav={navigate} />
-      <AcademicLogoStrip />
       <About onNav={navigate} />
       <Work />
       <Recommendations />

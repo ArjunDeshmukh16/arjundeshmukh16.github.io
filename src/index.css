@@ -62,15 +62,25 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .company-mark-dark img { width: 190%; max-width: none; flex-shrink: 0; height: auto; }
 .project-card { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 28px; align-items: start; background: #fff !important; }
 .project-visual { padding: 22px 15px; border-radius: 10px; background: #faf7f0; border: 1px solid #ece3d5; }
-.project-school { width: 165px; height: 45px; object-fit: contain; object-position: left; display: block; margin-bottom: 24px; }
 .visual-eyebrow { font-size: 9px; letter-spacing: 1px; font-weight: 700; color: var(--cardinal); }
 .project-visual svg { display: block; width: 100%; height: auto; margin-top: 8px; }
 .project-visual p { color: var(--body); font-size: 11px; font-weight: 600; line-height: 1.6; margin-top: 8px; }
 .project-visual small { display: block; color: var(--muted); font-size: 9px; line-height: 1.6; margin-top: 8px; }
-@media (max-width: 950px) { .hero { grid-template-columns: 1fr; gap: 55px; padding: 145px 32px 80px !important; } .university-showcase { justify-self: start; max-width: 550px; } }
-@media (max-width: 600px) { .hero { padding: 130px 24px 65px !important; } .hero > div { padding: 0 !important; } .experience-row { grid-template-columns: 1fr; gap: 16px; } .company-mark { width: 110px; height: 65px; } .project-card { grid-template-columns: 1fr; } .project-visual { max-width: 380px; } .campus-gallery img { height: 175px; } }
+@media (max-width: 950px) { .hero { grid-template-columns: 1fr; gap: 55px; padding: 145px 32px 80px !important; } }
+@media (max-width: 600px) { .hero { padding: 130px 24px 65px !important; } .hero > div { padding: 0 !important; } .experience-row { grid-template-columns: 1fr; gap: 16px; } .company-mark { width: 110px; height: 65px; } .project-card { grid-template-columns: 1fr; } .project-visual { max-width: 380px; } }
 
-.academic-logo-strip { max-width: 1000px; margin: 0 auto; padding: 0 32px 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.academic-logo-strip a { display: flex; flex-direction: column; justify-content: center; align-items: center; min-width: 0; background: #fff; border: 1px solid #e7dfd5; border-radius: 12px; padding: 20px 18px 16px; text-decoration: none; box-shadow: 0 6px 20px rgba(70,35,10,.035); }
-.academic-logo-strip img { display: block; width: 100%; height: 86px; object-fit: contain; }
-@media (max-width: 600px) { .academic-logo-strip { grid-template-columns: 1fr; max-width: 400px; padding: 0 24px; gap: 12px; } .academic-logo-strip img { height: 75px; } }
+
+/* One shared reading column and consistent section rhythm. */
+.site-nav > div { max-width: 836px !important; }
+.hero { min-height: auto !important; padding: 180px 32px 72px !important; }
+.hero > div { width: 100%; max-width: 836px !important; padding: 0 !important; margin: 0 auto !important; }
+.content-section { width: 100%; max-width: 900px !important; padding: 64px 32px !important; margin: 0 auto !important; scroll-margin-top: 90px; }
+#github.content-section { padding-top: 32px !important; }
+#credits.content-section { padding-top: 40px !important; padding-bottom: 56px !important; }
+@media (max-width: 768px) {
+  .hero { padding: 140px 24px 48px !important; }
+  .hero h1 { font-size: clamp(2.5rem, 8vw, 3.5rem) !important; }
+  .content-section { padding: 48px 24px !important; }
+  .site-nav > div { max-width: 100% !important; }
+  #github.content-section { padding-top: 24px !important; }
+}
