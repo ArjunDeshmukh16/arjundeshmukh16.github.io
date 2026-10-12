@@ -290,6 +290,14 @@ function Section({ id, title, children }: { id: string; title: string; children:
   );
 }
 
+function AcademicLogoStrip() {
+  return <div className="academic-logo-strip" aria-label="USC university and academic schools">
+    <a href="https://www.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-university-upload.png" alt="University of Southern California" loading="lazy" /><span>University of Southern California</span></a>
+    <a href="https://viterbischool.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-viterbi-upload.png" alt="USC Viterbi School of Engineering" loading="lazy" /><span>MS Financial Engineering</span></a>
+    <a href="https://www.marshall.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-marshall-upload.png" alt="USC Marshall School of Business" loading="lazy" /><span>Finance & investment coursework</span></a>
+  </div>;
+}
+
 function About({ onNav }: { onNav: (id: string) => void }) {
   void onNav;
   return (
@@ -860,6 +868,7 @@ export default function App() {
     <div style={{ background: "var(--page)", color: "var(--ink)", fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", letterSpacing: "-0.3px" }}>
       <Nav onNav={navigate} onCmd={() => setCmdOpen(v => !v)} />
       <Hero onNav={navigate} />
+      <AcademicLogoStrip />
       <About onNav={navigate} />
       <Work />
       <Recommendations />
