@@ -95,6 +95,69 @@ function Nav({ onNav, onCmd }: { onNav: (id: string) => void; onCmd: () => void 
   );
 }
 
+
+function UniversityShowcase() {
+  return <aside className="university-showcase" aria-label="USC academic background and campus">
+    <div className="school-marks">
+      <a href="https://viterbischool.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-viterbi.png" alt="USC Viterbi School of Engineering" width="578" height="157" /><span>MS Financial Engineering · 2026</span></a>
+      <a href="https://www.marshall.usc.edu/" target="_blank" rel="noreferrer"><img src="/brand/usc-marshall.png" alt="USC Marshall School of Business" width="624" height="154" /><span>Investment & capital markets coursework</span></a>
+    </div>
+    <div className="campus-gallery">
+      <figure><img src="/campus/tommy-trojan.jpg" alt="Tommy Trojan statue at sunset on USC campus" width="768" height="432" /><figcaption>Tommy Trojan <span>University Park</span></figcaption></figure>
+      <figure><img src="/campus/hecuba.jpg" alt="Hecuba statue at dusk in USC Village" width="768" height="432" /><figcaption>Hecuba <span>USC Village</span></figcaption></figure>
+    </div>
+    <p className="campus-credit">Campus photography: <a href="https://www.usc.edu/happy-birthday-tommy-trojan-shrine-was-unveiled-96-years-ago-june-6/" target="_blank" rel="noreferrer">USC / Gus Ruelas</a> · <a href="https://www.usc.edu/hecuba-cam/" target="_blank" rel="noreferrer">USC</a></p>
+  </aside>;
+}
+
+const companyMarks: Record<string, {src?: string; initials?: string; dark?: boolean}> = {
+  "Cogitative Investments": {initials: "CI"},
+  "Easley-Dunn Productions, Inc.": {src: "/brand/easley-dunn.png", dark: true},
+  "UTI Alternatives": {src: "/brand/uti-alternatives.svg"},
+  "HDFC Securities": {src: "/brand/hdfc-securities.jpg"},
+  "Yes Bank Limited": {src: "/brand/yes-bank.png"},
+  "Aditya Birla Capital": {src: "/brand/aditya-birla-capital.svg"},
+};
+function CompanyMark({company}: {company:string}) {
+  const mark = companyMarks[company];
+  return <div className={`company-mark ${mark?.dark ? "company-mark-dark" : ""}`}>
+    {mark?.src ? <img src={mark.src} alt={`${company} logo`} loading="lazy" /> : <span aria-label={`${company} initials`}>{mark?.initials || company.slice(0,2)}</span>}
+  </div>;
+}
+function ProjectVisual({signal}: {signal:boolean}) {
+  return <aside className="project-visual" aria-label={signal ? "Illustration of signal scoring inputs" : "Illustration of downside tail risk"}>
+    <img className="project-school" src={signal ? "/brand/usc-viterbi.png" : "/brand/usc-marshall.png"} alt={signal ? "USC Viterbi" : "USC Marshall"} loading="lazy" />
+    {signal ? <>
+      <div className="visual-eyebrow">MARKET DATA × NEWS</div>
+      <svg viewBox="0 0 320 235" role="img" aria-label="Trend, momentum, volume and news sentiment feed a weighted scoring engine producing buy, hold or sell signals">
+        <defs><linearGradient id="signal-gold"><stop stopColor="#ffcc00"/><stop offset="1" stopColor="#ffe79c"/></linearGradient></defs>
+        {[['Trend',35],['Momentum',81],['Volume',127],['Sentiment',173]].map(([t,y])=><g key={t}><rect x="12" y={Number(y)} width="105" height="34" rx="8" fill="#fff" stroke="#d8cdbf"/><text x="64" y={Number(y)+22} textAnchor="middle" fill="#665c55" fontSize="12">{t}</text><path d={`M117 ${Number(y)+17} C150 ${Number(y)+17}, 150 119, 172 119`} fill="none" stroke="#bd978c" strokeWidth="1.5"/></g>)}
+        <rect x="172" y="75" width="128" height="88" rx="18" fill="#990000"/>
+        <rect x="189" y="91" width="94" height="3" rx="1.5" fill="url(#signal-gold)"/>
+        <text x="236" y="119" textAnchor="middle" fill="#fff" fontSize="14" fontWeight="700">Weighted score</text>
+        <text x="236" y="144" textAnchor="middle" fill="#ffcc00" fontSize="17">0 — 100</text>
+        <path d="M236 163 V190" stroke="#990000" strokeWidth="1.5"/><rect x="171" y="190" width="130" height="30" rx="8" fill="#fff" stroke="#d8cdbf"/>
+        <text x="236" y="210" textAnchor="middle" fill="#990000" fontSize="11" fontWeight="700">BUY · HOLD · SELL</text>
+      </svg>
+      <p>Explainable inputs. One composite score.</p>
+    </> : <>
+      <div className="visual-eyebrow">UNDERSTANDING THE LEFT TAIL</div>
+      <svg viewBox="0 0 320 235" role="img" aria-label="Illustrative distribution highlighting downside tail risk">
+        <defs><linearGradient id="tail-fill" x2="0" y2="1"><stop stopColor="#990000" stopOpacity=".35"/><stop offset="1" stopColor="#990000" stopOpacity=".06"/></linearGradient></defs>
+        <path d="M20 180 C55 180,76 164,98 128 C120 78,140 50,160 48 C195 50,210 115,237 150 C255 172,280 180,301 180" fill="none" stroke="#9f8d7f" strokeWidth="2"/>
+        <path d="M20 180 C55 180,76 164,98 128 L98 180 Z" fill="url(#tail-fill)" stroke="#990000" strokeWidth="2"/>
+        <path d="M20 181 H301" stroke="#d8cdbf"/>
+        <path d="M98 128 V193" stroke="#990000" strokeDasharray="4 5"/>
+        <text x="56" y="113" textAnchor="middle" fill="#990000" fontSize="13" fontWeight="700">Left tail</text>
+        <text x="99" y="210" textAnchor="middle" fill="#665c55" fontSize="11">5% tail threshold</text>
+        <text x="229" y="210" textAnchor="middle" fill="#665c55" fontSize="11">Return distribution</text>
+      </svg>
+      <p>Looking beyond average volatility.</p>
+    </>}
+    <small>Concept illustration · not performance data</small>
+  </aside>;
+}
+
 function Hero({ onNav }: { onNav: (id: string) => void }) {
   const [roleIdx, setRoleIdx] = useState(0);
   const [taglineIdx, setTaglineIdx] = useState(0);
@@ -206,6 +269,7 @@ function Hero({ onNav }: { onNav: (id: string) => void }) {
           to navigate →
         </motion.p>
       </div>
+      <UniversityShowcase />
     </main>
   );
 }
@@ -351,7 +415,9 @@ function Work() {
     <Section id="work" title="Experience">
       {jobs.map((job, i) => (
         <FadeIn key={i} delay={i * 0.08}>
-          <div style={{ marginBottom: "2.5rem", paddingBottom: "2rem", borderBottom: i < jobs.length - 1 ? "1px solid rgba(92,57,43,0.05)" : "none" }}>
+          <div className="experience-row" style={{ marginBottom: "2.5rem", paddingBottom: "2rem", borderBottom: i < jobs.length - 1 ? "1px solid rgba(92,57,43,0.05)" : "none" }}>
+            <CompanyMark company={job.company} />
+            <div className="experience-copy">
             <div style={{ fontWeight: 700, color: "var(--ink)", marginBottom: "0.3rem", fontSize: "1.05rem" }}>{job.title}</div>
             <div style={{ color: "var(--muted)", fontSize: "0.95rem", marginBottom: "0.2rem" }}>
               {job.companyUrl ? (<a href={job.companyUrl} target="_blank" rel="noreferrer"
@@ -376,6 +442,7 @@ function Work() {
                 onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(92,57,43,0.05)"; (e.currentTarget as HTMLAnchorElement).style.color = "var(--muted)"; }}
               >↗ View Certificate</a>
             )}
+            </div>
           </div>
         </FadeIn>
       ))}
@@ -401,7 +468,7 @@ function Projects() {
           </FadeIn>
           {group.projects.map((p, i) => (
             <FadeIn key={i} delay={0.05 + i * 0.08}>
-              <div style={{
+              <div className="project-card" style={{
                 marginBottom: "2rem", padding: "1.5rem",
                 background: "rgba(92,57,43,0.02)", border: "1px solid rgba(92,57,43,0.06)",
                 borderRadius: 10, transition: "all 0.25s"
@@ -409,6 +476,7 @@ function Projects() {
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(92,57,43,0.04)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(92,57,43,0.1)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(92,57,43,0.02)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(92,57,43,0.06)"; }}
               >
+                <div className="project-copy">
                 <div style={{ fontWeight: 700, color: "var(--ink)", marginBottom: "0.3rem", fontSize: "1.05rem" }}>
                   {p.link ? (
                     <a href={p.link} target="_blank" rel="noreferrer"
@@ -447,6 +515,8 @@ function Projects() {
                     onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(92,57,43,0.06)"; (e.currentTarget as HTMLAnchorElement).style.color = "var(--muted)"; }}
                   >↗ GitHub Repo</a>
                 )}
+                </div>
+                <ProjectVisual signal={i === 0} />
               </div>
             </FadeIn>
           ))}
