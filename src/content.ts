@@ -5,26 +5,26 @@ export const roles = [
   {
     "text": "Investment Analyst at ",
     "highlight": "Cogitative Investments",
-    "from": "#1A56DB",
-    "to": "#D4AF37"
+    "from": "#990000",
+    "to": "#600000"
   },
   {
     "text": "MS Financial Engineering · ",
     "highlight": "USC",
-    "from": "#CC0000",
-    "to": "#FFCC00"
+    "from": "#990000",
+    "to": "#600000"
   },
   {
     "text": "B.Tech. Computer Science and Business Systems · ",
     "highlight": "NMIMS",
-    "from": "#8B1538",
-    "to": "#FF6B6B"
+    "from": "#990000",
+    "to": "#600000"
   },
   {
     "text": "Former Financial Analyst at ",
     "highlight": "Easley-Dunn Productions",
-    "from": "#003D7A",
-    "to": "#60A5FA"
+    "from": "#990000",
+    "to": "#600000"
   }
 ];
 
@@ -43,7 +43,7 @@ export const jobs = [
   {
     "title": "Investment Analyst",
     "company": "Cogitative Investments",
-    "companyColor": "#0052CC",
+    "companyColor": "#990000",
     "companyUrl": null,
     "location": "San Diego, CA",
     "period": "Jul 2026 – Present",
@@ -59,7 +59,7 @@ export const jobs = [
   {
     "title": "Financial Analyst",
     "company": "Easley-Dunn Productions, Inc.",
-    "companyColor": "#003D7A",
+    "companyColor": "#990000",
     "companyUrl": null,
     "location": "Torrance, CA",
     "period": "Jun 2026 – Jul 2026",
@@ -76,7 +76,7 @@ export const jobs = [
   {
     "title": "Private Equity and Structured Credit Intern",
     "company": "UTI Alternatives",
-    "companyColor": "#0052CC",
+    "companyColor": "#990000",
     "companyUrl": "https://www.utialternatives.com/home",
     "location": "New Delhi, India",
     "period": "Jul 2025 – Sep 2025",
@@ -93,7 +93,7 @@ export const jobs = [
   {
     "title": "Trading and Product Strategy Intern",
     "company": "HDFC Securities",
-    "companyColor": "#003D7A",
+    "companyColor": "#990000",
     "companyUrl": "https://www.hdfcsec.com/",
     "location": "Mumbai, India",
     "period": "May 2025 – Jul 2025",
@@ -109,7 +109,7 @@ export const jobs = [
   {
     "title": "Business Analyst Intern",
     "company": "Yes Bank Limited",
-    "companyColor": "#1E40AF",
+    "companyColor": "#990000",
     "companyUrl": "https://www.yes.bank.in/",
     "location": "Mumbai, India",
     "period": "May 2023 – Jul 2023",
@@ -126,7 +126,7 @@ export const jobs = [
   {
     "title": "Investments and Equity Research Intern",
     "company": "Aditya Birla Capital",
-    "companyColor": "#C8102E",
+    "companyColor": "#990000",
     "companyUrl": "https://www.adityabirlacapital.com/abcd/share-market",
     "location": "Mumbai, India",
     "period": "Jun 2022 – Jul 2022",
@@ -144,7 +144,7 @@ export const jobs = [
 export const projectGroups = [
   {
     "label": "Quantitative Research",
-    "labelColor": "#F59E0B",
+    "labelColor": "#990000",
     "projects": [
       {
         "title": "Buy/Sell Trading Signal Engine",
@@ -180,7 +180,7 @@ export const projectGroups = [
   },
   {
     "label": "Entrepreneurship & Leadership",
-    "labelColor": "#3B82F6",
+    "labelColor": "#990000",
     "projects": [
       {
         "title": "CampusX, Student Marketplace",
