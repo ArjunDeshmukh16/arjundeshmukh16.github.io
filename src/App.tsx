@@ -45,6 +45,7 @@ const taglines = [
   { word: "Investments", color: "#990000", glow: "rgba(245,158,11,0.4)" },
   { word: "Data", color: "var(--cardinal)", glow: "rgba(16,185,129,0.4)" },
   { word: "Strategy", color: "#990000", glow: "rgba(239,68,68,0.4)" },
+  { word: "Accuracy and Process", color: "#990000", glow: "rgba(239,68,68,0.4)" },
   { word: "Poker", color: "#990000", glow: "rgba(212,175,55,0.4)" },
 ];
 
